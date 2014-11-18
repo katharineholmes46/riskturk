@@ -71,6 +71,7 @@ var RiskExperiment = function() {
 			["100% 0¢ \u00A0 \u00A0  vs. \u00A0 \u00A0  100% 5¢", "100% 0¢", "100% 5¢"],
 			["100% 5¢ \u00A0 \u00A0  vs. \u00A0 \u00A0  100% 10¢", "100% 5¢", "100% 10¢"],
 		];
+		
 
 	//stims = _.shuffle(stims);
 
