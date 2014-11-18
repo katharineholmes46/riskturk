@@ -75,7 +75,7 @@ var RiskExperiment = function() {
 			show_word( stim[0]);
 			wordon = new Date().getTime();
 			listening = true;
-			d3.select("#query").html('<p id="prompt">Type "A" for the gamble on the left, "B" for for the gamble on the right.</p>');
+			d3.select("#query").html('<p id="prompt">Type "B" for the gamble on the left, "M" for for the gamble on the right.</p>');
 		}
 	};
 	
@@ -86,12 +86,12 @@ var RiskExperiment = function() {
 			response;
 
 		switch (keyCode) {
-			case 65:
-				// "A"
-				response="Gamble A";
-				break;
 			case 66:
 				// "B"
+				response="Gamble A";
+				break;
+			case 77:
+				// "M"
 				response="Gamble B";
 				break;
 			default:
