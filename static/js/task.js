@@ -18,9 +18,7 @@ var pages = [
 	"instructions/instruct-3.html",
 	"instructions/instruct-ready.html",
 	"stage.html",
-	"postquestionnaire.html", 
-	"BlockEnd.html",
-	"ExperimentEnd"
+	"postquestionnaire.html"
 ];
 
 psiTurk.preloadPages(pages);
@@ -32,9 +30,109 @@ var instructionPages = [ // add as a list as many pages as you like
 	"instructions/instruct-ready.html"
 ];
 
-/*** 
-TESTESTESTES
-***/
+/****
+
+var S1orS2 = function() { 
+	var one=document.getElementById("myCanvas");
+	var ctxone=one.getContext("2d");
+	// Red rectangle
+	ctxone.beginPath();
+	ctxone.lineWidth="6";
+	ctxone.strokeStyle="red";
+	ctxone.rect(5,5,290,140); 
+	ctxone.stroke();
+}; 
+
+var S2orS3 = function() { 
+	var two=document.getElementById("myCanvas");
+	var ctxtwo=two.getContext("2d");
+	// Red rectangle
+	ctxtwo.beginPath();
+	ctxtwo.lineWidth="6";
+	ctxtwo.strokeStyle="green";
+	ctxwo.rect(5,5,290,140); 
+	ctxwo.stroke();
+}; 
+
+var S2orS4 = function () { 
+	var three=document.getElementById("myCanvas");
+	var ctxthree=three.getContext("2d");
+	// Red rectangle
+	ctxthree.beginPath();
+	ctxthree.lineWidth="6";
+	ctxthree.strokeStyle="red";
+	ctxthree.rect(5,5,290,140); 
+	ctxthree.stroke();
+}: 
+
+var S1andS3 = function() { 
+	var four=document.getElementById("myCanvas");
+	var ctxfour=four.getContext("2d");
+	// Red rectangle
+	ctxfour.beginPath();
+	ctxfour.lineWidth="1";
+	ctxfour.strokeStyle="red";
+	ctxfour.rect(5,5,290,140); 
+	ctxfour.stroke();
+}; 
+
+var S3andS4 = function() { 
+	var five=document.getElementById("myCanvas");
+	var ctxfive=five.getContext("2d");
+	// Red rectangle
+	ctxfive.beginPath();
+	ctxfive.lineWidth="1";
+	ctxfive.strokeStyle="green";
+	ctxfive.rect(5,5,290,140); 
+	ctxfive.stroke();
+}; 
+
+var S1 = function() { 
+	var six=document.getElementById("myCanvas");
+	var ctxsix=six.getContext("2d");
+	// Red rectangle
+	ctxsix.beginPath();
+	ctxsix.lineWidth="1";
+	ctxsix.strokeStyle="blue";
+	ctxsix.rect(5,5,290,140); 
+	ctxsix.stroke();
+}: 
+
+var S2 = function() { 
+	var seven=document.getElementById("myCanvas");
+	var ctxseven=seven.getContext("2d");
+	// Red rectangle
+	ctxseven.beginPath();
+	ctxseven.lineWidth="12";
+	ctxseven.strokeStyle="red";
+	ctxseven.rect(5,5,290,140); 
+	ctxseven.stroke();
+}; 
+
+var S3 = function() { 
+	var eight=document.getElementById("myCanvas");
+	var ctxeight=eight.getContext("2d");
+	// Red rectangle
+	ctxeight.beginPath();
+	ctxeight.lineWidth="12";
+	ctxeight.strokeStyle="red";
+	ctxeight.rect(5,5,290,140); 
+	ctxeight.stroke();
+}; 
+
+var S4 = function { 
+	var nine=document.getElementById("myCanvas");
+	var ctxnine=nine.getContext("2d");
+	// Red rectangle
+	ctxnine.beginPath();
+	ctxnine.lineWidth="12";
+	ctxnine.strokeStyle="red";
+	ctxnine.rect(5,5,290,140); 
+	ctxnine.stroke();
+}; 
+
+****/ 
+
 
 
 /********************
@@ -48,10 +146,20 @@ TESTESTESTES
 ********************/
 
 /********************
-* STROOP TEST       *
+* RL Task       *
+
+1: S1 + S2 x 20
+2: S2 + S3 x 30 (risk trials) 
+3: S2 + S4 x 20
+4: S1 + S3 x 15
+5: S3 + S4 x 15
+6: Forced S1 x 12
+7: Forced S2 x 14
+8: Forced S3 x 12
+9: Forced S4 x 12
+
 ********************/ 
 
-var Block1 = function() { 
 var RiskExperiment = function() {
 
 	var wordon, // time word is presented
@@ -59,38 +167,31 @@ var RiskExperiment = function() {
 
 	// Stimuli for a basic Stroop experiment
 	var stims = [
-			["1/10 of $2.00 or 9/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 1/10 of $3.85 or 9/10 of $0.10", "1/10 of $2.00 or 9/10 of $1.60", "1/10 of $3.85 or 9/10 of $0.10"],
-			["2/10 of $2.00 or 8/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 2/10 of $3.85 or 8/10 of $0.10", "2/10 of $2.00 or 8/10 of $1.60", "2/10 of $3.85 or 8/10 of $0.10"],
-			["3/10 of $2.00 or 7/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 3/10 of $3.85 or 7/10 of $0.10", "3/10 of $2.00 or 7/10 of $1.60", "3/10 of $3.85 or 7/10 of $0.10"],
-			["4/10 of $2.00 or 6/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 4/10 of $3.85 or 6/10 of $0.10", "4/10 of $2.00 or 6/10 of $1.60", "4/10 of $3.85 or 6/10 of $0.10"],
-			["5/10 of $2.00 or 5/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 5/10 of $3.85 or 5/10 of $0.10", "5/10 of $2.00 or 5/10 of $1.60", "5/10 of $3.85 or 5/10 of $0.10"],
-			["6/10 of $2.00 or 4/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 6/10 of $3.85 or 4/10 of $0.10", "6/10 of $2.00 or 4/10 of $1.60", "6/10 of $3.85 or 4/10 of $0.10"],
-			["7/10 of $2.00 or 3/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 7/10 of $3.85 or 3/10 of $0.10", "7/10 of $2.00 or 3/10 of $1.60", "7/10 of $3.85 or 3/10 of $0.10"],
-			["8/10 of $2.00 or 2/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 8/10 of $3.85 or 2/10 of $0.10", "8/10 of $2.00 or 2/10 of $1.60", "8/10 of $3.85 or 2/10 of $0.10"],
-			["9/10 of $2.00 or 1/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 9/10 of $3.85 or 1/10 of $0.10", "9/10 of $2.00 or 1/10 of $1.60", "9/10 of $3.85 or 1/10 of $0.10"], 
-			["10/10 of $2.00 or 0/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 10/10 of $3.85 or 0/10 of $0.10", "10/10 of $2.00 or 0/10 of $1.60", "10/10 of $3.85 or 1/10 of $0.10"], 
-			["100% 0¢ \u00A0 \u00A0  vs. \u00A0 \u00A0   50% 10¢ or 50% 50¢", "100% 0¢", "50% 10¢ or 50% 50¢"], 
-			["100% 5¢ \u00A0 \u00A0  vs. \u00A0 \u00A0   50% 10¢ or 50% 0¢","100% 5¢", "50% 10¢ or 50% 0¢"],  
-			["100% 5¢ \u00A0 \u00A0  vs. \u00A0 \u00A0  100% 10¢", "100% 5¢", "100% 10¢"], 
-			["100% 0¢ \u00A0 \u00A0  vs. \u00A0 \u00A0  100% 5¢", "100% 0¢", "100% 5¢"],
-			["100% 5¢ \u00A0 \u00A0  vs. \u00A0 \u00A0  100% 10¢", "100% 5¢", "100% 10¢"],
+			[ "S1 or S2" ],
+			[ "S2 or S3"],
+			[ "S3 or S4"],
+			[ "S1 or S3"],
+			[ "S3 or S4"],
+			[ "S1"],
+			[ "S2"],
+			[ "S3"],
+			[ "S4"] 
 		];
-		
 
-	//stims = _.shuffle(stims);
+	stims = _.shuffle(stims);
+
 
 	var next = function() {
 		if (stims.length===0) {
-			psiTurk.showPage('BlockEnd.html');
-			window.setInterval("Block2", 2000)
+			finish();
 		}
 		else {
 			stim = stims.shift();
-			show_word( stim[0]);
+			show_word( stim[0] );
 			wordon = new Date().getTime();
 			listening = true;
-			d3.select("#query").html('<p id="prompt">Type "A" for the gamble on the left, "B" for for the gamble on the right.</p>');
-		}
+			d3.select("#query").html('<p id="prompt">Type "N" for the bandit on the left and M for the bandit on the right.</p>');
+			}
 	};
 	
 	var response_handler = function(e) {
@@ -100,13 +201,13 @@ var RiskExperiment = function() {
 			response;
 
 		switch (keyCode) {
-			case 65:
-				// "A"
-				response="Gamble A";
+			case 77:
+				// "M"
+				response="The bandit on the right";
 				break;
-			case 66:
-				// "B"
-				response="Gamble B";
+			case 78:
+				// "N"
+				response="The bandit on the left";
 				break;
 			default:
 				response = "";
@@ -118,8 +219,11 @@ var RiskExperiment = function() {
 			var rt = new Date().getTime() - wordon;
 
 			psiTurk.recordTrialData({'phase':"TEST",
-                                     'Gamble A':stim[1],
-                                     'Gamble B':stim[2],
+                                     'word':stim[0],
+                                     'color':stim[1],
+                                     'relation':stim[2],
+                                     'response':response,
+                                     'hit':hit,
                                      'rt':rt}
                                    );
 			remove_word();
@@ -127,23 +231,28 @@ var RiskExperiment = function() {
 		}
 	};
 
+	var finish = function() {
+	    $("body").unbind("keydown", response_handler); // Unbind keys
+	    currentview = new Questionnaire();
+	};
 	
-	var show_word = function(text, color) {
-		d3.select("#stim")
-			.append("div")
-			.attr("id","word")
-			.style("color",color)
-			.style("text-align","center")
-			.style("font-size","25px")
-			.style("font-weight","200")
-			.style("margin","20px")
-			.text(text);
+	var show_word = function() {
+		paper = new Raphael(document.getElementById('canvas_container'), 500, 150);
+		if (stims === "S1 or S2") { 
+			left = paper.rect(10, 10, 120, 120);
+			left.attr({stroke: "rgb(58, 122, 42)", 'stroke-width':15}); 
+		} 
+		else  {
+			right = paper.circle(70, 70, 60);
+			right.attr({stroke: "rgb(189, 62, 62)", 'stroke-width': 15});
+
+		} 
+
 	};
 
 	var remove_word = function() {
 		d3.select("#word").remove();
 	};
-
 
 	
 	// Load the stage.html snippet into the body of the page
@@ -153,14 +262,70 @@ var RiskExperiment = function() {
 	// key down events.
 	$("body").focus().keydown(response_handler); 
 
-
 	// Start the test
+	
 	next();
+
+	
 };
 
 
+/****************
+* Questionnaire *
+****************/
 
+var Questionnaire = function() {
 
+	var error_message = "<h1>Oops!</h1><p>Something went wrong submitting your HIT. This might happen if you lose your internet connection. Press the button to resubmit.</p><button id='resubmit'>Resubmit</button>";
+
+	record_responses = function() {
+
+		psiTurk.recordTrialData({'phase':'postquestionnaire', 'status':'submit'});
+
+		$('textarea').each( function(i, val) {
+			psiTurk.recordUnstructuredData(this.id, this.value);
+		});
+		$('select').each( function(i, val) {
+			psiTurk.recordUnstructuredData(this.id, this.value);		
+		});
+
+	};
+
+	prompt_resubmit = function() {
+		replaceBody(error_message);
+		$("#resubmit").click(resubmit);
+	};
+
+	resubmit = function() {
+		replaceBody("<h1>Trying to resubmit...</h1>");
+		reprompt = setTimeout(prompt_resubmit, 10000);
+		
+		psiTurk.saveData({
+			success: function() {
+			    clearInterval(reprompt); 
+                psiTurk.computeBonus('compute_bonus', function(){finish()}); 
+			}, 
+			error: prompt_resubmit
+		});
+	};
+
+	// Load the questionnaire snippet 
+	psiTurk.showPage('postquestionnaire.html');
+	psiTurk.recordTrialData({'phase':'postquestionnaire', 'status':'begin'});
+	
+	$("#next").click(function () {
+	    record_responses();
+	    psiTurk.saveData({
+            success: function(){
+                psiTurk.computeBonus('compute_bonus', function() { 
+                	psiTurk.completeHIT(); // when finished saving compute bonus, the quit
+                }); 
+            }, 
+            error: prompt_resubmit});
+	});
+    
+	
+};
 
 // Task object to keep track of the current phase
 var currentview;
@@ -174,13 +339,3 @@ $(window).load( function(){
     	function() { currentview = new RiskExperiment(); } // what you want to do when you are done with instructions
     );
 });
-
-}; 
-
-
-
-Block1();
-
-
-
-
