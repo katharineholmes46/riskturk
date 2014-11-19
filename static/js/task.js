@@ -48,16 +48,17 @@ TESTESTESTES
 ********************/
 
 /********************
-* STROOP TEST       *
+* RISK EXPERIMENT       *
 ********************/ 
 
 var Block1 = function() { 
+
 var RiskExperiment = function() {
 
 	var wordon, // time word is presented
 	    listening = false;
 
-	// Stimuli for a basic Stroop experiment
+	// gambles for holt and laury
 	var stims = [
 			["1/10 of $2.00 or 9/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 1/10 of $3.85 or 9/10 of $0.10", "1/10 of $2.00 or 9/10 of $1.60", "1/10 of $3.85 or 9/10 of $0.10"],
 			["2/10 of $2.00 or 8/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 2/10 of $3.85 or 8/10 of $0.10", "2/10 of $2.00 or 8/10 of $1.60", "2/10 of $3.85 or 8/10 of $0.10"],
@@ -69,11 +70,6 @@ var RiskExperiment = function() {
 			["8/10 of $2.00 or 2/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 8/10 of $3.85 or 2/10 of $0.10", "8/10 of $2.00 or 2/10 of $1.60", "8/10 of $3.85 or 2/10 of $0.10"],
 			["9/10 of $2.00 or 1/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 9/10 of $3.85 or 1/10 of $0.10", "9/10 of $2.00 or 1/10 of $1.60", "9/10 of $3.85 or 1/10 of $0.10"], 
 			["10/10 of $2.00 or 0/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 10/10 of $3.85 or 0/10 of $0.10", "10/10 of $2.00 or 0/10 of $1.60", "10/10 of $3.85 or 1/10 of $0.10"], 
-			["100% 0¢ \u00A0 \u00A0  vs. \u00A0 \u00A0   50% 10¢ or 50% 50¢", "100% 0¢", "50% 10¢ or 50% 50¢"], 
-			["100% 5¢ \u00A0 \u00A0  vs. \u00A0 \u00A0   50% 10¢ or 50% 0¢","100% 5¢", "50% 10¢ or 50% 0¢"],  
-			["100% 5¢ \u00A0 \u00A0  vs. \u00A0 \u00A0  100% 10¢", "100% 5¢", "100% 10¢"], 
-			["100% 0¢ \u00A0 \u00A0  vs. \u00A0 \u00A0  100% 5¢", "100% 0¢", "100% 5¢"],
-			["100% 5¢ \u00A0 \u00A0  vs. \u00A0 \u00A0  100% 10¢", "100% 5¢", "100% 10¢"],
 		];
 		
 
@@ -126,7 +122,6 @@ var RiskExperiment = function() {
 			next();
 		}
 	};
-
 	
 	var show_word = function(text, color) {
 		d3.select("#stim")
@@ -143,8 +138,6 @@ var RiskExperiment = function() {
 	var remove_word = function() {
 		d3.select("#word").remove();
 	};
-
-
 	
 	// Load the stage.html snippet into the body of the page
 	psiTurk.showPage('stage.html');
@@ -153,13 +146,9 @@ var RiskExperiment = function() {
 	// key down events.
 	$("body").focus().keydown(response_handler); 
 
-
 	// Start the test
 	next();
 };
-
-
-
 
 
 // Task object to keep track of the current phase
@@ -177,10 +166,7 @@ $(window).load( function(){
 
 }; 
 
-
-
 Block1();
-
 
 
 
