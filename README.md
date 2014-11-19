@@ -1,8 +1,7 @@
 Risk project
 
 Holt & Laury
-* Change response keys to B/M
-* Timing changes (add timing, ITI -- see slide deck)
+* Timing changes (add timeout, ITI -- see slide deck)
 * Beautify (hard to read now)
 
 RiskRL
