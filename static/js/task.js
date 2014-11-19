@@ -20,6 +20,7 @@ var pages = [
 	"stage.html",
 	"postquestionnaire.html", 
 	"BlockEnd.html",
+	"ExperimentEnd"
 ];
 
 psiTurk.preloadPages(pages);
@@ -30,6 +31,10 @@ var instructionPages = [ // add as a list as many pages as you like
 	"instructions/instruct-3.html",
 	"instructions/instruct-ready.html"
 ];
+
+/*** 
+TESTESTESTES
+***/
 
 
 /********************
@@ -44,7 +49,9 @@ var instructionPages = [ // add as a list as many pages as you like
 
 /********************
 * STROOP TEST       *
-********************/
+********************/ 
+
+var Block1 = function() { 
 var RiskExperiment = function() {
 
 	var wordon, // time word is presented
@@ -61,14 +68,21 @@ var RiskExperiment = function() {
 			["7/10 of $2.00 or 3/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 7/10 of $3.85 or 3/10 of $0.10", "7/10 of $2.00 or 3/10 of $1.60", "7/10 of $3.85 or 3/10 of $0.10"],
 			["8/10 of $2.00 or 2/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 8/10 of $3.85 or 2/10 of $0.10", "8/10 of $2.00 or 2/10 of $1.60", "8/10 of $3.85 or 2/10 of $0.10"],
 			["9/10 of $2.00 or 1/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 9/10 of $3.85 or 1/10 of $0.10", "9/10 of $2.00 or 1/10 of $1.60", "9/10 of $3.85 or 1/10 of $0.10"], 
-			["10/10 of $2.00 or 0/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 10/10 of $3.85 or 0/10 of $0.10", "10/10 of $2.00 or 0/10 of $1.60", "10/10 of $3.85 or 1/10 of $0.10"]
+			["10/10 of $2.00 or 0/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 10/10 of $3.85 or 0/10 of $0.10", "10/10 of $2.00 or 0/10 of $1.60", "10/10 of $3.85 or 1/10 of $0.10"], 
+			["100% 0¢ \u00A0 \u00A0  vs. \u00A0 \u00A0   50% 10¢ or 50% 50¢", "100% 0¢", "50% 10¢ or 50% 50¢"], 
+			["100% 5¢ \u00A0 \u00A0  vs. \u00A0 \u00A0   50% 10¢ or 50% 0¢","100% 5¢", "50% 10¢ or 50% 0¢"],  
+			["100% 5¢ \u00A0 \u00A0  vs. \u00A0 \u00A0  100% 10¢", "100% 5¢", "100% 10¢"], 
+			["100% 0¢ \u00A0 \u00A0  vs. \u00A0 \u00A0  100% 5¢", "100% 0¢", "100% 5¢"],
+			["100% 5¢ \u00A0 \u00A0  vs. \u00A0 \u00A0  100% 10¢", "100% 5¢", "100% 10¢"],
 		];
+		
 
-	stims = _.shuffle(stims);
+	//stims = _.shuffle(stims);
 
 	var next = function() {
 		if (stims.length===0) {
 			psiTurk.showPage('BlockEnd.html');
+			window.setInterval("Block2", 2000)
 		}
 		else {
 			stim = stims.shift();
@@ -113,10 +127,6 @@ var RiskExperiment = function() {
 		}
 	};
 
-	var finish = function() {
-	    $("body").unbind("keydown", response_handler); // Unbind keys
-	    currentview = new Questionnaire();
-	};
 	
 	var show_word = function(text, color) {
 		d3.select("#stim")
@@ -134,6 +144,7 @@ var RiskExperiment = function() {
 		d3.select("#word").remove();
 	};
 
+
 	
 	// Load the stage.html snippet into the body of the page
 	psiTurk.showPage('stage.html');
@@ -142,67 +153,14 @@ var RiskExperiment = function() {
 	// key down events.
 	$("body").focus().keydown(response_handler); 
 
+
 	// Start the test
 	next();
 };
 
 
-/****************
-* Questionnaire *
-****************/
 
-var Questionnaire = function() {
 
-	var error_message = "<h1>Oops!</h1><p>Something went wrong submitting your HIT. This might happen if you lose your internet connection. Press the button to resubmit.</p><button id='resubmit'>Resubmit</button>";
-
-	record_responses = function() {
-
-		psiTurk.recordTrialData({'phase':'postquestionnaire', 'status':'submit'});
-
-		$('textarea').each( function(i, val) {
-			psiTurk.recordUnstructuredData(this.id, this.value);
-		});
-		$('select').each( function(i, val) {
-			psiTurk.recordUnstructuredData(this.id, this.value);		
-		});
-
-	};
-
-	prompt_resubmit = function() {
-		replaceBody(error_message);
-		$("#resubmit").click(resubmit);
-	};
-
-	resubmit = function() {
-		replaceBody("<h1>Trying to resubmit...</h1>");
-		reprompt = setTimeout(prompt_resubmit, 10000);
-		
-		psiTurk.saveData({
-			success: function() {
-			    clearInterval(reprompt); 
-                psiTurk.computeBonus('compute_bonus', function(){finish()}); 
-			}, 
-			error: prompt_resubmit
-		});
-	};
-
-	// Load the questionnaire snippet 
-	psiTurk.showPage('postquestionnaire.html');
-	psiTurk.recordTrialData({'phase':'postquestionnaire', 'status':'begin'});
-	
-	$("#next").click(function () {
-	    record_responses();
-	    psiTurk.saveData({
-            success: function(){
-                psiTurk.computeBonus('compute_bonus', function() { 
-                	psiTurk.completeHIT(); // when finished saving compute bonus, the quit
-                }); 
-            }, 
-            error: prompt_resubmit});
-	});
-    
-	
-};
 
 // Task object to keep track of the current phase
 var currentview;
@@ -216,3 +174,13 @@ $(window).load( function(){
     	function() { currentview = new RiskExperiment(); } // what you want to do when you are done with instructions
     );
 });
+
+}; 
+
+
+
+Block1();
+
+
+
+
