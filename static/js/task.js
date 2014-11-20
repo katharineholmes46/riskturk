@@ -1,3 +1,4 @@
+
 /*
  * Requires:
  *     psiturk.js
@@ -28,14 +29,8 @@ psiTurk.preloadPages(pages);
 var instructionPages = [ // add as a list as many pages as you like
 	"instructions/instruct-1.html",
 	"instructions/instruct-2.html",
-	"instructions/instruct-3.html",
 	"instructions/instruct-ready.html"
 ];
-
-/*** 
-hello
-***/ 
-
 
 /********************
 * HTML manipulation
@@ -48,17 +43,17 @@ hello
 ********************/
 
 /********************
-* RISK EXPERIMENT       *
+* RISK EXPERIMENT   *
 ********************/ 
 
 var Block1 = function() { 
 
-var RiskExperiment = function() {
+var RiskDescription = function() {
 
-	var wordon, // time word is presented
+	var wordon, // time stimulus is presented
 	    listening = false;
 
-	// gambles for holt and laury
+	// gambles 
 	var stims = [
 			["1/10 of $2.00 or 9/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 1/10 of $3.85 or 9/10 of $0.10", "1/10 of $2.00 or 9/10 of $1.60", "1/10 of $3.85 or 9/10 of $0.10"],
 			["2/10 of $2.00 or 8/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 2/10 of $3.85 or 8/10 of $0.10", "2/10 of $2.00 or 8/10 of $1.60", "2/10 of $3.85 or 8/10 of $0.10"],
@@ -160,7 +155,7 @@ var currentview;
 $(window).load( function(){
     psiTurk.doInstructions(
     	instructionPages, // a list of pages you want to display in sequence
-    	function() { currentview = new RiskExperiment(); } // what you want to do when you are done with instructions
+    	function() { currentview = new RiskDescription(); } // what you want to do when you are done with instructions
     );
 });
 
