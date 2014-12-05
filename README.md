@@ -5,8 +5,11 @@ Holt & Laury
 * Beautify (hard to read now)
 
 RiskRL
+* Put forced choices L or R 
+* Increase distance between stimuli
 
 
 DOSPERT 
+* Separate pages for each scale so that subjects don't have to scroll down too much
 
  
