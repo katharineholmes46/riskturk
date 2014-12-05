@@ -7,10 +7,6 @@
 // Initalize psiturk object
 var psiTurk = new PsiTurk(uniqueId, adServerLoc, mode);
 
-var mycondition = condition;  // these two variables are passed by the psiturk server process
-var mycounterbalance = counterbalance;  // they tell you which condition you have been assigned to
-// they are not used in the stroop code but may be useful to you
-
 // All pages to be loaded
 var pages = [
 	"instructions/instruct-1.html",
@@ -160,12 +156,12 @@ var S4 = function {
 
 ********************/ 
 
-var RiskExperiment = function() {
+var RiskExperience = function() {
 
 	var wordon, // time word is presented
 	    listening = false;
 
-	// Stimuli for a basic Stroop experiment
+	// Stimuli 
 	var stims = [
 			[ "S1 or S2" ],
 			[ "S2 or S3"],
@@ -179,7 +175,6 @@ var RiskExperiment = function() {
 		];
 
 	stims = _.shuffle(stims);
-
 
 	var next = function() {
 		if (stims.length===0) {
@@ -201,12 +196,12 @@ var RiskExperiment = function() {
 			response;
 
 		switch (keyCode) {
-			case 77:
-				// "M"
+			case 66:
+				// "B"
 				response="The bandit on the right";
 				break;
-			case 78:
-				// "N"
+			case 77:
+				// "M"
 				response="The bandit on the left";
 				break;
 			default:
@@ -215,18 +210,14 @@ var RiskExperiment = function() {
 		}
 		if (response.length>0) {
 			listening = false;
-			var hit = response == stim[1];
 			var rt = new Date().getTime() - wordon;
 
 			psiTurk.recordTrialData({'phase':"TEST",
                                      'word':stim[0],
-                                     'color':stim[1],
-                                     'relation':stim[2],
                                      'response':response,
-                                     'hit':hit,
                                      'rt':rt}
                                    );
-			remove_word();
+			remove_stim();
 			next();
 		}
 	};
@@ -238,6 +229,10 @@ var RiskExperiment = function() {
 	
 	var show_word = function() {
 		paper = new Raphael(document.getElementById('canvas_container'), 500, 150);
+		// left = paper.rect(10, 10, 120, 120);
+
+		
+
 		if (stims === "S1 or S2") { 
 			left = paper.rect(10, 10, 120, 120);
 			left.attr({stroke: "rgb(58, 122, 42)", 'stroke-width':15}); 
@@ -250,7 +245,7 @@ var RiskExperiment = function() {
 
 	};
 
-	var remove_word = function() {
+	var remove_stim = function() {
 		d3.select("#word").remove();
 	};
 
