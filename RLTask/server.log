@@ -7944,3 +7944,2101 @@ TemplateNotFound: undefined
 2014-12-03 13:56:41,286 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
 2014-12-03 13:56:41,292 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
 2014-12-03 13:56:41,350 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 11:42:27,520 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 11:42:27,733 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 11:42:27,797 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 11:42:28,064 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 11:42:28,098 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 11:42:28,159 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 11:42:28,164 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 11:42:28,190 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 11:42:28,191 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 11:53:13,848 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:53:16,778 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:53:17,393 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:53:17,858 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:53:18,041 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:53:18,282 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:53:18,658 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:53:18,833 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:53:19,026 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:53:21,219 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:54:27,306 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:54:27,726 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:54:29,063 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:54:29,902 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:54:30,542 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:54:30,926 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:54:31,311 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:54:31,733 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:54:32,102 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:54:34,472 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:54:36,549 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:54:36,765 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:54:36,973 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:54:37,189 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:54:37,405 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:54:37,613 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:54:37,877 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:54:38,133 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 11:54:40,416 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+[2014-12-04 13:24:40 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30344)
+[2014-12-04 13:24:40 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30345)
+[2014-12-04 13:24:40 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30346)
+[2014-12-04 13:24:40 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30347)
+[2014-12-04 13:24:40 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30348)
+[2014-12-04 13:24:40 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30349)
+[2014-12-04 13:24:40 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30350)
+[2014-12-04 13:24:40 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30351)
+[2014-12-04 13:24:40 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30352)
+2014-12-04 13:24:41,267 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 13:24:41,333 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 13:24:41,368 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 13:24:41,438 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 13:24:41,522 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 13:24:41,585 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 13:24:41,590 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 13:24:41,599 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 13:24:41,611 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2014-12-04 13:35:21 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30695)
+[2014-12-04 13:35:21 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30696)
+[2014-12-04 13:35:21 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30697)
+[2014-12-04 13:35:21 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30698)
+[2014-12-04 13:35:21 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30699)
+[2014-12-04 13:35:21 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30700)
+[2014-12-04 13:35:21 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30701)
+[2014-12-04 13:35:21 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30702)
+[2014-12-04 13:35:21 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30703)
+2014-12-04 13:35:22,356 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 13:35:22,630 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 13:35:22,801 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 13:35:22,841 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 13:35:22,852 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 13:35:22,864 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 13:35:22,931 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 13:35:22,991 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 13:35:22,992 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 13:54:50,692 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 13:54:50,947 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 13:54:51,394 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 13:54:51,603 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 13:54:51,771 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 13:54:51,938 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 13:54:52,114 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 13:57:11,101 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 13:57:12,488 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 13:57:12,761 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 13:57:13,008 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 13:57:13,248 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 13:57:13,481 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 13:57:13,696 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 13:57:13,920 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 13:57:14,304 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 13:57:19,971 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 14:03:41,269 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 14:07:11,595 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 14:07:12,308 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 14:07:12,493 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 14:07:12,652 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 14:07:12,829 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 14:07:12,997 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 14:07:13,166 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 14:07:13,333 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-04 14:07:13,494 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+[2014-12-04 16:05:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30720)
+[2014-12-04 16:05:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30712)
+[2014-12-04 16:05:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30713)
+[2014-12-04 16:05:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30714)
+[2014-12-04 16:05:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30715)
+[2014-12-04 16:05:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30716)
+[2014-12-04 16:05:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30717)
+[2014-12-04 16:05:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30718)
+[2014-12-04 16:05:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:30719)
+2014-12-04 16:05:09,374 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 16:05:09,403 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 16:05:09,414 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 16:05:09,431 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 16:05:09,434 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 16:05:09,444 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 16:05:09,455 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 16:05:09,558 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 16:05:09,579 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2014-12-04 19:06:38 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31603)
+[2014-12-04 19:06:38 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31604)
+[2014-12-04 19:06:38 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31605)
+[2014-12-04 19:06:38 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31606)
+[2014-12-04 19:06:38 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31607)
+[2014-12-04 19:06:38 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31608)
+[2014-12-04 19:06:38 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31609)
+[2014-12-04 19:06:38 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31610)
+[2014-12-04 19:06:38 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31611)
+[2014-12-04 23:20:55 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31633)
+[2014-12-04 23:20:55 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31634)
+[2014-12-04 23:20:55 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31635)
+[2014-12-04 23:20:55 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31636)
+[2014-12-04 23:20:55 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31637)
+[2014-12-04 23:20:55 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31638)
+2014-12-04 23:20:57,416 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 23:20:57,465 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 23:20:57,714 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 23:20:57,726 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 23:20:57,739 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 23:20:57,790 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 23:20:57,811 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 23:20:57,812 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 23:20:57,842 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2014-12-04 23:55:25 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31648)
+[2014-12-04 23:55:25 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31649)
+[2014-12-04 23:55:25 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31650)
+[2014-12-04 23:55:25 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31639)
+[2014-12-04 23:55:25 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31640)
+[2014-12-04 23:55:25 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31641)
+[2014-12-04 23:55:25 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31643)
+[2014-12-04 23:55:25 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31646)
+[2014-12-04 23:55:25 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31647)
+2014-12-04 23:55:26,490 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 23:55:26,497 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 23:55:26,581 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 23:55:26,705 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 23:55:26,791 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 23:55:26,853 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 23:55:26,881 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 23:55:26,928 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-04 23:55:26,934 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2014-12-05 00:25:18 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31744)
+[2014-12-05 00:25:18 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31745)
+[2014-12-05 00:25:18 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31746)
+[2014-12-05 00:25:18 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31747)
+[2014-12-05 00:25:18 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31748)
+[2014-12-05 00:25:18 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31739)
+[2014-12-05 00:25:18 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31740)
+[2014-12-05 00:25:18 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31742)
+[2014-12-05 00:25:18 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31743)
+2014-12-05 00:25:19,632 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:25:19,689 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:25:19,700 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:25:19,769 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:25:19,771 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:25:19,816 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:25:19,845 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:25:19,884 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:25:19,939 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2014-12-05 00:54:44 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31798)
+[2014-12-05 00:54:44 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31799)
+[2014-12-05 00:54:44 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31800)
+[2014-12-05 00:54:44 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31801)
+[2014-12-05 00:54:44 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31802)
+[2014-12-05 00:54:44 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31803)
+[2014-12-05 00:54:44 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31804)
+[2014-12-05 00:54:44 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31805)
+[2014-12-05 00:54:44 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31806)
+2014-12-05 00:54:44,918 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:54:44,943 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:54:44,996 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:54:45,021 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:54:45,102 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:54:45,123 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:54:45,184 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:54:45,187 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:54:45,197 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2014-12-05 00:56:26 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31813)
+[2014-12-05 00:56:26 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31814)
+[2014-12-05 00:56:26 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31815)
+[2014-12-05 00:56:26 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31816)
+[2014-12-05 00:56:26 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31817)
+[2014-12-05 00:56:26 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31818)
+[2014-12-05 00:56:26 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31819)
+[2014-12-05 00:56:26 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31820)
+[2014-12-05 00:56:26 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31821)
+2014-12-05 00:56:27,329 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:56:27,326 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:56:27,517 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:56:27,637 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:56:27,703 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:56:27,747 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:56:27,818 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:56:27,843 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 00:56:27,879 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2014-12-05 01:57:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31828)
+[2014-12-05 01:57:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31829)
+[2014-12-05 01:57:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31830)
+[2014-12-05 01:57:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31831)
+[2014-12-05 01:57:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31832)
+[2014-12-05 01:57:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31833)
+[2014-12-05 01:57:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31834)
+[2014-12-05 01:57:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31835)
+[2014-12-05 01:57:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31836)
+2014-12-05 01:57:07,751 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 01:57:07,810 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 01:57:08,058 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 01:57:08,241 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 01:57:08,329 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 01:57:08,340 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 01:57:08,391 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 01:57:08,395 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 01:57:08,402 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2014-12-05 02:58:02 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31857)
+2014-12-05 02:58:03,056 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2014-12-05 04:00:27 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31858)
+2014-12-05 04:00:28,230 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2014-12-05 05:01:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31873)
+[2014-12-05 05:01:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31892)
+[2014-12-05 05:01:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31859)
+[2014-12-05 05:01:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31860)
+[2014-12-05 05:01:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31861)
+[2014-12-05 05:01:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31862)
+[2014-12-05 05:01:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31863)
+[2014-12-05 05:01:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31864)
+[2014-12-05 05:01:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31865)
+2014-12-05 05:01:07,998 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 05:01:07,999 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 05:01:08,282 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 05:01:08,413 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 05:01:08,519 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 05:01:08,536 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 05:01:08,612 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 05:01:08,614 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 05:01:08,672 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2014-12-05 06:01:49 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31894)
+[2014-12-05 06:01:49 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31895)
+[2014-12-05 06:01:49 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31896)
+[2014-12-05 06:01:49 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31897)
+[2014-12-05 06:01:49 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31898)
+[2014-12-05 06:01:49 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31899)
+[2014-12-05 06:01:49 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31900)
+[2014-12-05 06:01:49 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31901)
+[2014-12-05 06:01:49 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31902)
+2014-12-05 06:01:50,398 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 06:01:50,450 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 06:01:50,649 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 06:01:50,683 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 06:01:50,735 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 06:01:50,809 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 06:01:50,833 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 06:01:50,846 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 06:01:50,890 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2014-12-05 07:02:31 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31910)
+[2014-12-05 07:02:31 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31911)
+[2014-12-05 07:02:31 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31912)
+[2014-12-05 07:02:31 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31913)
+[2014-12-05 07:02:31 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31914)
+[2014-12-05 07:02:31 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31915)
+[2014-12-05 07:02:31 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31916)
+[2014-12-05 07:02:31 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31917)
+[2014-12-05 07:02:31 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31918)
+2014-12-05 07:02:31,835 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 07:02:31,854 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 07:02:31,969 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 07:02:31,986 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 07:02:32,057 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 07:02:32,115 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 07:02:32,165 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 07:02:32,191 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 07:02:32,222 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2014-12-05 08:03:26 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31922)
+[2014-12-05 08:03:26 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31923)
+[2014-12-05 08:03:26 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31924)
+[2014-12-05 08:03:26 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31925)
+[2014-12-05 08:03:26 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31926)
+[2014-12-05 08:03:26 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31927)
+[2014-12-05 08:03:26 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31928)
+[2014-12-05 08:03:26 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31929)
+[2014-12-05 08:03:26 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31930)
+2014-12-05 08:03:27,537 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 08:03:27,832 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 08:03:27,840 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 08:03:28,031 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 08:03:28,047 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 08:03:28,064 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 08:03:28,083 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 08:03:28,115 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 08:03:28,144 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2014-12-05 09:04:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31936)
+[2014-12-05 09:04:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31937)
+[2014-12-05 09:04:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31938)
+[2014-12-05 09:04:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31939)
+[2014-12-05 09:04:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31940)
+[2014-12-05 09:04:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31932)
+[2014-12-05 09:04:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31933)
+[2014-12-05 09:04:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31934)
+[2014-12-05 09:04:07 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31935)
+2014-12-05 09:04:08,558 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 09:04:08,582 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 09:04:08,723 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 09:04:08,847 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 09:04:08,975 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 09:04:09,002 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 09:04:09,036 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 09:04:09,058 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 09:04:09,088 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2014-12-05 09:52:22 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31942)
+[2014-12-05 09:52:22 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31943)
+[2014-12-05 09:52:22 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31944)
+[2014-12-05 09:52:22 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31945)
+[2014-12-05 09:52:22 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31946)
+[2014-12-05 09:52:22 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31947)
+[2014-12-05 09:52:22 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31948)
+[2014-12-05 09:52:22 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31949)
+[2014-12-05 09:52:22 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:31950)
+2014-12-05 09:52:23,650 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 09:52:23,658 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 09:52:23,796 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 09:52:23,910 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 09:52:23,954 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 09:52:23,963 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 09:52:24,043 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 09:52:24,063 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 09:52:24,072 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2014-12-05 12:18:12 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:32023)
+[2014-12-05 12:18:12 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:32024)
+[2014-12-05 12:18:12 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:32025)
+[2014-12-05 12:18:12 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:32026)
+[2014-12-05 12:18:12 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:32027)
+[2014-12-05 12:18:12 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:32028)
+[2014-12-05 12:18:12 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:32029)
+[2014-12-05 12:18:12 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:32030)
+[2014-12-05 12:18:12 -0500] [30340] [CRITICAL] WORKER TIMEOUT (pid:32031)
+2014-12-05 12:18:13,266 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 12:18:13,310 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 12:18:13,349 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 12:18:13,390 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 12:18:13,486 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 12:18:13,550 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 12:18:13,562 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 12:18:13,578 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 12:18:13,586 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 13:12:18,833 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-05 13:12:19,001 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-05 13:12:19,199 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-05 13:12:19,400 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-05 13:12:19,592 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-05 13:12:19,968 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-05 13:12:20,399 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-05 13:12:20,825 Exception on /undefined [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: undefined
+2014-12-05 13:39:02,114 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 13:39:02,215 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 13:39:02,556 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 13:39:02,592 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 13:39:02,740 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 13:39:02,761 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 13:39:02,775 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 13:39:02,787 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 13:39:02,824 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 13:39:10,517 Exception on /postquestionnaire.html [GET]
+Traceback (most recent call last):
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "//anaconda/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "//anaconda/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "//anaconda/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "//anaconda/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "//anaconda/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: postquestionnaire.html
+2014-12-05 13:56:54,541 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 13:56:54,715 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 13:56:54,794 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 13:56:54,854 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 13:56:54,946 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 13:56:55,030 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 13:56:55,040 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 13:56:55,076 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 13:56:55,110 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 14:30:09,181 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 14:30:09,184 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 14:30:09,297 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 14:30:09,321 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 14:30:09,369 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 14:30:09,404 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 14:30:09,441 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 14:30:09,444 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 14:30:09,527 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 14:53:08,562 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 14:53:08,638 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 14:53:08,833 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 14:53:08,885 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 14:53:08,956 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 14:53:09,041 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 14:53:09,061 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 14:53:09,107 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-12-05 14:53:09,145 //anaconda/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
