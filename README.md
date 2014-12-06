@@ -1,7 +1,7 @@
 Risk project
 
 General: 
-* Full screen opening 
+* Full screen  
 
 Holt & Laury
 * Timing changes (add timeout, ITI -- see slide deck)
