@@ -3,6 +3,7 @@ Risk project
 General: 
 * Full screen 
 * Data collection details 
+* Add BIS-BAS? 
 
 Holt & Laury
 * Timing changes (add timeout, ITI -- see slide deck)
