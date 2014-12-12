@@ -35,11 +35,6 @@ var instructionPages = [ // add as a list as many pages as you like
 ];
 
 
-
-
-
-
-
 /********************
 * HTML manipulation
 *
