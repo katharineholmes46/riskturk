@@ -18,3 +18,13 @@ function boolpercent(arr) {
 	}
 	return 100* count / arr.length;
 }
+
+// returns an array with element elem repeated n times.
+var repeatelem = function(elem, n){
+        
+        var arr = [];
+        for (var i=0; i<=n; i++) {
+            arr = arr.concat(elem);
+        };
+        return arr;
+    };
