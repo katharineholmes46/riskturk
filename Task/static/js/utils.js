@@ -28,3 +28,8 @@ var repeatelem = function(elem, n){
         };
         return arr;
     };
+
+// returns random number between min and max
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+}
