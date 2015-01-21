@@ -2,14 +2,11 @@
  * Requires:
  *     psiturk.js
  *     utils.js
+ *     math.min.js
  */
 
 // Initalize psiturk object
 var psiTurk = new PsiTurk(uniqueId, adServerLoc, mode);
-
-var mycondition = condition;  // these two variables are passed by the psiturk server process
-var mycounterbalance = counterbalance;  // they tell you which condition you have been assigned to
-// they are not used in the stroop code but may be useful to you
 
 // All pages to be loaded
 var pages = [
@@ -50,12 +47,6 @@ var instructionPages = [ // add as a list as many pages as you like
 	"instructions/instruct-ready.html"
 ];
 
-
-
-
-
-
-
 /********************
 * HTML manipulation
 *
@@ -72,2114 +63,403 @@ var instructionPages = [ // add as a list as many pages as you like
 1: S1 + S2 x 20
 2: S2 + S3 x 30 (risk trials) 
 3: S2 + S4 x 20
-4: S1 + S3 x 16
-5: S3 + S4 x 16
+4: S1 + S3 x 15
+5: S3 + S4 x 15
 6: Forced S1 x 12
 7: Forced S2 x 14
 8: Forced S3 x 12
 9: Forced S4 x 12
 
+Total: 150
+
 ********************/ 
 
 var RiskExperiment = function() {
 
-		var images = [ 
-				"static/images/S1[].svg",
-				"static/images/[]S1.svg",
-				"static/images/S1[].svg",
-				"static/images/[]S1.svg",
-				"static/images/S1[].svg",
-				"static/images/[]S1.svg",
-				"static/images/S1[].svg",
-				"static/images/[]S1.svg",
-				"static/images/S1[].svg",
-				"static/images/[]S1.svg",
-				"static/images/S1[].svg",
-				"static/images/[]S1.svg",
-				"static/images/S2[].svg",
-				"static/images/[]S2.svg",
-				"static/images/S2[].svg",
-				"static/images/[]S2.svg",
-				"static/images/S2[].svg",
-				"static/images/[]S2.svg",
-				"static/images/S2[].svg",
-				"static/images/[]S2.svg",
-				"static/images/S2[].svg",
-				"static/images/[]S2.svg",
-				"static/images/S2[].svg",
-				"static/images/[]S2.svg",
-				"static/images/S2[].svg",
-				"static/images/[]S2.svg",
-				"static/images/S3[].svg",
-				"static/images/[]S3.svg",
-				"static/images/S3[].svg",
-				"static/images/[]S3.svg",
-				"static/images/S3[].svg",
-				"static/images/[]S3.svg",
-				"static/images/S3[].svg",
-				"static/images/[]S3.svg",
-				"static/images/S3[].svg",
-				"static/images/[]S3.svg",
-				"static/images/S3[].svg",
-				"static/images/[]S3.svg",
-				"static/images/S4[].svg",
-				"static/images/[]S4.svg", 
-				"static/images/S4[].svg",
-				"static/images/[]S4.svg", 
-				"static/images/S4[].svg",
-				"static/images/[]S4.svg", 
-				"static/images/S4[].svg",
-				"static/images/[]S4.svg", 
-				"static/images/S4[].svg",
-				"static/images/[]S4.svg", 
-				"static/images/S4[].svg",
-				"static/images/[]S4.svg", 
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS3.svg", 
-				"static/images/S3orS1.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg"
-				];
+	// *** define timing parameters (in miliseconds) ***
 
-				psiTurk.preloadImages(images);
+	iti_bounds = [1000,2000];
+	outcome_time = 500;
+	time_out = 1500;
 
-				images = _.shuffle(images);
 
-	var wordon, // time word is presented
-	    listening = false;
 
-	// Stimuli for a basic Stroop experiment
-	var stims = [
-			[ "[]S1"],
-			[ "S1[]"],
-			[ "[]S1"],
-			[ "S1[]"],
-			[ "[]S1"],
-			[ "S1[]"],
-			[ "[]S1"],
-			[ "S1[]"],
-			[ "[]S1"],
-			[ "S1[]"],
-			[ "[]S1"],
-			[ "S1[]"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "[]S2"],
-			[ "S2[]"],
-			[ "[]S2"],
-			[ "S2[]"],
-			[ "[]S2"],
-			[ "S2[]"],
-			[ "[]S2"],
-			[ "S2[]"],
-			[ "[]S2"],
-			[ "S2[]"],
-			[ "[]S2"],
-			[ "S2[]"],
-			[ "[]S2"],
-			[ "S2[]"],
-			[ "[]S3"],
-			[ "S3[]"],
-			[ "[]S3"],
-			[ "S3[]"],
-			[ "[]S3"],
-			[ "S3[]"],
-			[ "[]S3"],
-			[ "S3[]"],
-			[ "[]S3"],
-			[ "S3[]"],
-			[ "[]S3"],
-			[ "S3[]"],
-			[ "[]S4"], 
-			[ "S4[]"],
-			[ "[]S4"], 
-			[ "S4[]"],
-			[ "[]S4"], 
-			[ "S4[]"],
-			[ "[]S4"], 
-			[ "S4[]"],
-			[ "[]S4"], 
-			[ "S4[]"],
-			[ "[]S4"], 
-			[ "S4[]"]
-		];
+	// *** define trialtypes *** 
 
-	
-	
-	stims = _.shuffle(stims);
-	
+	// training
+	var tt_train_forced = [8, 9, 7, 6, 9, 7, 6, 8, 9, 6, 7, 8, 7, 6, 9, 8];
+	var tt_train_choice = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5];
+	tt_train_choice = shuffle(tt_train_choice);
+	tt_train = tt_train_forced.concat(tt_train_choice);
 
-	var next = function() {
-		if (stims.length===0) {
-				psiTurk.showPage('Block1End.html')
-		} 
-		else { 
-			psiTurk.showPage('stage.html');
-			stim = stims.shift();
-			current_img = images.shift();
-			$('#stim').html('<img src='+current_img+' height=600 width=800>');
-			wordon = new Date().getTime();
-			listening = true;
-			d3.select("#query").html('<p id="prompt"></p>');
+	// test
+	var tt_test_1 = repeatelem(1,20);
+	var tt_test_2 = repeatelem(2,30);
+	var tt_test_3 = repeatelem(3,20);
+	var tt_test_4 = repeatelem(4,15);
+	var tt_test_5 = repeatelem(5,15);
+	var tt_test_6 = repeatelem(6,12);
+	var tt_test_7 = repeatelem(7,14);
+	var tt_test_8 = repeatelem(8,12);
+	var tt_test_9 = repeatelem(9,12);
+	var tt_test = tt_test_1.concat(tt_test_2 ,tt_test_3 ,tt_test_4 ,tt_test_5,tt_test_6,tt_test_7,tt_test_8,tt_test_9);
+	tt_test = shuffle(tt_test);
+
+	// all 
+	trial_types = tt_train.concat(tt_test);
+
+
+	// trial variables 
+	trial = -1; // initializes the trial counter
+	nTrialsTrain = tt_train.length; 
+	nTrialsTest = tt_test.length; 
+	nTrials = nTrialsTrain + nTrialsTest; 
+
+
+
+	// *** load graphics *** 
+
+	// individual pictures
+	images = [ 
+			"static/images/S1.svg",
+			"static/images/S2.svg",
+			"static/images/S3.svg",
+			"static/images/S4.svg"
+			];
+
+	// feedback
+	feedback = [ 
+			"static/images/0points.svg",
+			"static/images/5points.svg",
+			"static/images/10points.svg"
+			];
+
+	// other 		
+	otherstims = [ 
+			"static/images/fixation.svg",
+			"static/images/tooslow.svg",
+			"static/images/wrongside.svg",
+			"static/images/blank.png"
+			];
+
+	// preload		
+	psiTurk.preloadImages(images);
+	psiTurk.preloadImages(feedback);
+	psiTurk.preloadImages(otherstims);
+
+	// shuffle order of pictures 
+	images = shuffle(images);
+
+
+
+	// *** advance to a new trial ***
+	var setup_newTrial = function(){
+        
+        trial += 1; // advance counter
+
+        if (trial < nTrials) {
+    
+        		trialtype = trial_types[trial];
+        		displayStims(trialtype);
+
+        	}
+        else {
+        	psiTurk.showPage('Block1End.html');
+        }
+
+    }
+
+
+
+    // *** display stimuli ***
+	var displayStims = function(trialtype) {
+
+		// shuffle position
+		stimPos = [1,2];
+		stimPos = _.shuffle(stimPos);
+
+		console.log(trialtype); // for debugging
+
+		psiTurk.showPage('stage.html');
+		
+		switch(trialtype) {
+
+			case 1: // S1 + S2
+    			var current_img1 = images[0];
+    			var current_img2 = images[1];
+    			break;
+
+    		case 2: // S2 + S3
+    			var current_img1 = images[1];
+    			var current_img2 = images[2];
+    			break;
+
+    		case 3: // S2 + S4
+    			var current_img1 = images[1];
+    			var current_img2 = images[3];
+    			break;
+
+    		case 4: // S1 + S3
+    			var current_img1 = images[0];
+    			var current_img2 = images[2];
+    			break;
+
+    		case 5: // S3 + S4
+    			var current_img1 = images[2];
+    			var current_img2 = images[3];
+    			break;
+
+			case 6: // forced S1
+    			var current_img1 = images[0];
+    			var current_img2 = otherstims[3];
+    			break;
+			
+			case 7: // forced S2
+    			var current_img1 = images[1];
+    			var current_img2 = otherstims[3];
+    			break;
+
+    		case 8: // forced S3
+    			var current_img1 = images[2];
+    			var current_img2 = otherstims[3];
+    			break;
+
+    		case 9: // forced S4
+    			var current_img1 = images[3];
+    			var current_img2 = otherstims[3];
+    			break;
+    	}
+
+    	console.log(current_img1); // for debugging	
+    	console.log(current_img2); // for debugging
+
+    	if (stimPos[0] === 1) {
+    		$("#stim_left").attr("src",current_img1);
+    		$("#stim_right").attr("src",current_img2);
 		}
-	};
+		else {
+			$("#stim_right").attr("src",current_img1);
+    		$("#stim_left").attr("src",current_img2);
+		}
+
+		stimOn = new Date().getTime();
+		listening = true;
+
+		// register the response and show feedback
+		$("body").focus().keydown(response_handler);
+
+	}; // end displayStims
 
 
-	
+
+	// *** response handler ***
 	var response_handler = function(e) {
+
+		console.log(trialtype); // for debugging 
+
 		if (!listening) return;
 
-		var keyCode = e.keyCode,
-			response;
+		var keyCode = e.keyCode;
+		// 66 = "B", subject picked left 
+		// 77 = "M", subject picked right
 
-		switch (keyCode) {
-			case 77:
-				// "M"
-				response="The bandit on the right";
-				break;
-			case 66:
-				// "N"
-				response="The bandit on the left";
-				break;
-			default:
-				response = "";
-				break;
-		}
-		if (response.length>0) {
+		switch(trialtype) 
+		{	
+				case 1:
+					if (stimPos[0] == 1)
+					{
+						if (keyCode == 66) {response = "S1";}
+						else {response = "S2";}
+					}
+					else 
+					{
+						if (keyCode == 66) {response = "S2";}
+						else {response = "S1";}
+					}
+					break
+
+				case 2:
+					if (stimPos[0] == 1)
+					{
+						if (keyCode == 66) {response = "S2";}
+						else {response = "S3";}
+					}
+					else 
+					{
+						if (keyCode == 66) {response = "S3";}
+						else {response = "S2";}
+					}
+					break
+
+				case 3:
+					if (stimPos[0] == 1)
+					{
+						if (keyCode == 66) {response = "S2";}
+						else {response = "S4";}
+					}
+					else 
+					{
+						if (keyCode == 66) {response = "S4";}
+						else {response = "S2";}
+					}
+					break
+
+				case 4:
+					if (stimPos[0] == 1)
+					{
+						if (keyCode == 66) {response = "S1";}
+						else {response = "S3";}
+					}
+					else 
+					{
+						if (keyCode == 66) {response = "S3";}
+						else {response = "S1";}
+					}
+					break
+				
+				case 5:
+					if (stimPos[0] == 1)
+					{
+						if (keyCode == 66) {response = "S3";}
+						else {response = "S4";}
+					}
+					else 
+					{
+						if (keyCode == 66) {response = "S4";}
+						else {response = "S3";}
+					}
+					break				
+
+				case 6:
+
+					if (stimPos[0] == 1 && keyCode == 66) {response = "S1";}
+					else if (stimPos[0] == 2 && keyCode == 77) {response = "S1";}
+					else {response = "wrongside";}
+	    			break;
+				
+				case 7:
+
+	    			if (stimPos[0] == 1 && keyCode == 66) {response = "S2";}
+					else if (stimPos[0] == 2 && keyCode == 77){response = "S2";}
+					else {response = "wrongside";}
+	    			break;
+
+	    		case 8:
+
+	    			if (stimPos[0] == 1 && keyCode == 66) {response = "S3";}
+					else if (stimPos[0] == 2 && keyCode == 77)
+					{response = "S3";}
+					else {response = "wrongside";}
+	    			break;
+
+	    		case 9:
+
+	    			if (stimPos[0] == 1 && keyCode == 66) {response = "S4";}
+					else if (stimPos[0] == 2 && keyCode == 77) {response = "S4";}
+					else {response = "wrongside";}
+	    			break;
+	    }
+
+	    // does not handle the case in which participants don't respond at all
+		if (response.length>0) 
+		{	
 			listening = false;
-			var rt = new Date().getTime() - wordon;
 
-			psiTurk.recordTrialData({'phase':"TEST",
-                                     'bandit':event.keyCode,
-                                     'image':images[0], /* may have problem here - I don't know if the stims and images will align */ 
-                                     'response':response,
-                                     'rt':rt}
-                                   );
-			if (rt > 1500) { 
-				remove_word(); 
-				slow(); 
-				setTimeout(fixstim, 500);	
-			}
-			else if (current_img=="static/images/S1[].svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						nopoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					nopoints(); 
-					setTimeout(fixstim, 500); 
-				}
-			}
-			else if (current_img=="static/images/[]S1.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						nopoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					nopoints(); 
-					setTimeout(fixstim, 500); 
-				}
-			}
-			else if (current_img=="static/images/[]S2.svg") { 
-				if (event.keyCode = 77) {
-						remove_word();
-						Math.random(); 
-							if (Math.random < 0.5) { 
-								nopoints();
-							} 
-							else { 
-								tenpoints(); 
-							} 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					nopoints(); 
-					setTimeout(fixstim, 500); 
-				}
-			}  
-			else if (current_img=="static/images/S2[].svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						nopoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					Math.random(); 
-						if (Math.random < .5) { 
-							nopoints(); 
-						}
-						else { 
-							tenpoints(); 
-						} 
-					setTimeout(fixstim, 500); 
-				}
-			}
-			else if (current_img=="static/images/[]S3.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						fivepoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					nopoints(); 
-					setTimeout(fixstim, 500); 
-				}
-			}
-			else if (current_img=="static/images/S3[].svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						nopoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					fivepoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else if (current_img=="static/images/[]S4.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						tenpoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					nopoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else if (current_img=="static/images/S4[].svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						nopoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					tenpoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else if (current_img=="static/images/S1orS3.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						fivepoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					nopoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else if (current_img=="static/images/S3orS1.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						nopoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					fivepoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else if (current_img=="static/images/S1orS2.svg") { 
-				if (event.keyCode = 77) {
-						remove_word();
-						Math.random(); 
-							if (Math.random < 0.5) { 
-								nopoints();
-							} 
-							else { 
-								tenpoints(); 
-							} 
-						setTimeout(fixstim, 500);
-				}
-				else {
-					remove_word(); 
-					nopoints(); 
-					setTimeout(fixstim, 500); 
-				}
-			}
-			else if (current_img=="static/images/S2orS1.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						nopoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					Math.random(); 
-						if (Math.random < 0.5) {
-							nopoints(); 
-						}
-						else { 
-							tenpoints(); 
-						}
-					setTimeout(fixstim, 500); 
-				}
-			} 
-			else if (current_img=="static/images/S2orS3.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						fivepoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					Math.random(); 
-						if (Math.random < 0.5) { 
-							nopoints(); 
-						}
-						else { 
-							tenpoints(); 
-						} 
-					setTimeout(fixstim, 500); 
-				}
-			}
-			else if (current_img=="static/images/S3orS2.svg") { 
-				if (event.keyCode = 77) {
-						remove_word();
-						Math.random(); 
-							if (Math.random < 0.5)  { 
-								nopoints(); 
-							}
-							else { 
-								tenpoints(); 
-							}
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					fivepoints(); 
-					setTimeout(fixstim, 500);
-				}
-			}
-			else if (current_img=="static/images/S2orS4.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						tenpoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					Math.random(); 
-						if (Math.random < 0.5) { 
-							nopoints(); 
-						}
-						else { 
-							tenpoints(); 
-						} 
-					setTimeout(fixstim, 500);
-				}
-			}
-			else if (current_img=="static/images/S4orS2.svg") { 
-				if (event.keyCode = 77) {
-						remove_word();
-						Math.random() 
-							if (Math.random < 0.5) { 
-								nopoints(); 
-							}
-							else { 
-								tenpoints(); 
-							}
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					tenpoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else if (current_img=="static/images/S3orS4.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						tenpoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					fivepoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else if (current_img=="static/images/S4orS3.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						fivepoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					tenpoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else { 
-				remove_word(); 
-				fixstim(); 
-			}
+			var rt = new Date().getTime() - stimOn;
 			
+			// record data
+			psiTurk.recordTrialData({'response':response,
+	                                 'rt':rt}
+	                               );
+			
+			if (rt > time_out) // show slow screen
+			{ 
+				$('#stim').html('<img src='+otherstims[1]+' height=200 width=200 align=center>');
+				setTimeout(fixstim, outcome_time);	
+			}
+			else // show feedback
+				show_feedback(response);
+
 		}
-	};
+
+	}; // end response_handler
 
 
-
-	var remove_word = function() {
-		d3.select("#word").remove();
-	};
-
-	var fixation = function() { 
-		psiTurk.showPage('fixation.html');
-	};
+	// *** show fixation ***
 
 	var fixstim = function() { 
-		fixation(); 
-		setTimeout(next, 500);
+		var iti = getRandomArbitrary(iti_bounds[0],iti_bounds[1]);
+		$('#stim').html('<img src='+otherstims[0]+' height=200 width=200 align=center>');
+		setTimeout(setup_newTrial, iti); // wait iti 
 	};
 
-	var slow = function() { 
-		psiTurk.showPage('slow.html');
-	};
-
-	var nopoints = function() { 
-		psiTurk.showPage('nopoints.html')
-	}
-
-	var tenpoints = function() { 
-		psiTurk.showPage('tenpoints.html')
-	} 
-
-	var fivepoints = function() { 
-		psiTurk.showPage('fivepoints.html')
-
-	}
 
 
+	// *** show feedback ***
+
+	var show_feedback = function(response) {
+
+		switch (response)
+			{
+				case "S1":
+
+					$('#stim').html('<img src='+feedback[0]+' height=200 width=200 align=center>');
+					setTimeout(fixstim, outcome_time); 
+					break;
+
+				case "S2":
+
+					var hlp_rand = Math.random();
+					if (hlp_rand < 0.5)
+					{
+						
+						$('#stim').html('<img src='+feedback[0]+' height=200 width=200 align=center>');
+						setTimeout(fixstim, outcome_time); 
+					}
+					else
+					{
+						
+						setTimeout(fixstim, outcome_time); 
+						$('#stim').html('<img src='+feedback[2]+' height=200 width=200 align=center>');
+					}
+					break;
+
+				case "S3":
+
+					$('#stim').html('<img src='+feedback[1]+' height=200 width=200 align=center>');
+					setTimeout(fixstim, outcome_time); 
+					break;
+
+				case "S4":
+
+					$('#stim').html('<img src='+feedback[2]+' height=200 width=200 align=center>');
+					setTimeout(fixstim, outcome_time); 
+					break;
+
+				case "wrongside":
+					$('#stim').html('<img src='+otherstims[2]+' height=200 width=200 align=center>');
+					setTimeout(fixstim, outcome_time); 
+					break;
+
+			}	
+
+	} // end show_feedback
+
+
+
+// *** start task ***
 	
-	// Load the stage.html snippet into the body of the page
-	psiTurk.showPage('stage.html');
+psiTurk.showPage('stage.html'); // load stage
+$('#stim').html('<img src='+otherstims[0]+' height=200 width=200 align=center>');
+setTimeout(console.log("starting experiment..."), 500)
+setup_newTrial();
 
-	// Register the response handler that is defined above to handle any
-	// key down events.
-	$("body").focus().keydown(response_handler); 
-
-	// Start the test
-
-	fixation(); 
-	
-	setTimeout(next, 500);
-
-	
 };
 
-var RiskExperiment2 = function() {
 
-		var images = [ 
-				"static/images/S1[].svg",
-				"static/images/[]S1.svg",
-				"static/images/S1[].svg",
-				"static/images/[]S1.svg",
-				"static/images/S1[].svg",
-				"static/images/[]S1.svg",
-				"static/images/S1[].svg",
-				"static/images/[]S1.svg",
-				"static/images/S1[].svg",
-				"static/images/[]S1.svg",
-				"static/images/S1[].svg",
-				"static/images/[]S1.svg",
-				"static/images/S2[].svg",
-				"static/images/[]S2.svg",
-				"static/images/S2[].svg",
-				"static/images/[]S2.svg",
-				"static/images/S2[].svg",
-				"static/images/[]S2.svg",
-				"static/images/S2[].svg",
-				"static/images/[]S2.svg",
-				"static/images/S2[].svg",
-				"static/images/[]S2.svg",
-				"static/images/S2[].svg",
-				"static/images/[]S2.svg",
-				"static/images/S2[].svg",
-				"static/images/[]S2.svg",
-				"static/images/S3[].svg",
-				"static/images/[]S3.svg",
-				"static/images/S3[].svg",
-				"static/images/[]S3.svg",
-				"static/images/S3[].svg",
-				"static/images/[]S3.svg",
-				"static/images/S3[].svg",
-				"static/images/[]S3.svg",
-				"static/images/S3[].svg",
-				"static/images/[]S3.svg",
-				"static/images/S3[].svg",
-				"static/images/[]S3.svg",
-				"static/images/S4[].svg",
-				"static/images/[]S4.svg", 
-				"static/images/S4[].svg",
-				"static/images/[]S4.svg", 
-				"static/images/S4[].svg",
-				"static/images/[]S4.svg", 
-				"static/images/S4[].svg",
-				"static/images/[]S4.svg", 
-				"static/images/S4[].svg",
-				"static/images/[]S4.svg", 
-				"static/images/S4[].svg",
-				"static/images/[]S4.svg", 
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS3.svg", 
-				"static/images/S3orS1.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg"
-				];
-
-				psiTurk.preloadImages(images);
-
-				images = _.shuffle(images);
-
-	var wordon, // time word is presented
-	    listening = false;
-
-	// Stimuli for a basic Stroop experiment
-	var stims = [
-			[ "[]S1"],
-			[ "S1[]"],
-			[ "[]S1"],
-			[ "S1[]"],
-			[ "[]S1"],
-			[ "S1[]"],
-			[ "[]S1"],
-			[ "S1[]"],
-			[ "[]S1"],
-			[ "S1[]"],
-			[ "[]S1"],
-			[ "S1[]"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "[]S2"],
-			[ "S2[]"],
-			[ "[]S2"],
-			[ "S2[]"],
-			[ "[]S2"],
-			[ "S2[]"],
-			[ "[]S2"],
-			[ "S2[]"],
-			[ "[]S2"],
-			[ "S2[]"],
-			[ "[]S2"],
-			[ "S2[]"],
-			[ "[]S2"],
-			[ "S2[]"],
-			[ "[]S3"],
-			[ "S3[]"],
-			[ "[]S3"],
-			[ "S3[]"],
-			[ "[]S3"],
-			[ "S3[]"],
-			[ "[]S3"],
-			[ "S3[]"],
-			[ "[]S3"],
-			[ "S3[]"],
-			[ "[]S3"],
-			[ "S3[]"],
-			[ "[]S4"], 
-			[ "S4[]"],
-			[ "[]S4"], 
-			[ "S4[]"],
-			[ "[]S4"], 
-			[ "S4[]"],
-			[ "[]S4"], 
-			[ "S4[]"],
-			[ "[]S4"], 
-			[ "S4[]"],
-			[ "[]S4"], 
-			[ "S4[]"]
-		];
-
-	
-	
-	stims = _.shuffle(stims);
-	
-
-	var next = function() {
-		if (stims.length===0) {
-				psiTurk.showPage('Block2End.html')
-		} 
-		else { 
-			psiTurk.showPage('stage.html');
-			stim = stims.shift();
-			current_img = images.shift();
-			$('#stim').html('<img src='+current_img+' height=600 width=800>');
-			wordon = new Date().getTime();
-			listening = true;
-			d3.select("#query").html('<p id="prompt"></p>');
-		}
-	};
-
-
-	
-	var response_handler = function(e) {
-		if (!listening) return;
-
-		var keyCode = e.keyCode,
-			response;
-
-		switch (keyCode) {
-			case 77:
-				// "M"
-				response="The bandit on the right";
-				break;
-			case 66:
-				// "N"
-				response="The bandit on the left";
-				break;
-			default:
-				response = "";
-				break;
-		}
-		if (response.length>0) {
-			listening = false;
-			var rt = new Date().getTime() - wordon;
-
-			psiTurk.recordTrialData({'phase':"TEST",
-                                     'bandit':event.keyCode,
-                                     'image':images[0], /* may have problem here - I don't know if the stims and images will align */ 
-                                     'response':response,
-                                     'rt':rt}
-                                   );
-			if (rt > 1500) { 
-				remove_word(); 
-				slow(); 
-				setTimeout(fixstim, 500);	
-			}
-			else if (current_img=="static/images/S1[].svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						nopoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					nopoints(); 
-					setTimeout(fixstim, 500); 
-				}
-			}
-			else if (current_img=="static/images/[]S1.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						nopoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					nopoints(); 
-					setTimeout(fixstim, 500); 
-				}
-			}
-			else if (current_img=="static/images/[]S2.svg") { 
-				if (event.keyCode = 77) {
-						remove_word();
-						Math.random(); 
-							if (Math.random < 0.5) { 
-								nopoints();
-							} 
-							else { 
-								tenpoints(); 
-							} 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					nopoints(); 
-					setTimeout(fixstim, 500); 
-				}
-			}  
-			else if (current_img=="static/images/S2[].svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						nopoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					Math.random(); 
-						if (Math.random < .5) { 
-							nopoints(); 
-						}
-						else { 
-							tenpoints(); 
-						} 
-					setTimeout(fixstim, 500); 
-				}
-			}
-			else if (current_img=="static/images/[]S3.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						fivepoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					nopoints(); 
-					setTimeout(fixstim, 500); 
-				}
-			}
-			else if (current_img=="static/images/S3[].svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						nopoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					fivepoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else if (current_img=="static/images/[]S4.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						tenpoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					nopoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else if (current_img=="static/images/S4[].svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						nopoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					tenpoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else if (current_img=="static/images/S1orS3.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						fivepoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					nopoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else if (current_img=="static/images/S3orS1.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						nopoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					fivepoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else if (current_img=="static/images/S1orS2.svg") { 
-				if (event.keyCode = 77) {
-						remove_word();
-						Math.random(); 
-							if (Math.random < 0.5) { 
-								nopoints();
-							} 
-							else { 
-								tenpoints(); 
-							} 
-						setTimeout(fixstim, 500);
-				}
-				else {
-					remove_word(); 
-					nopoints(); 
-					setTimeout(fixstim, 500); 
-				}
-			}
-			else if (current_img=="static/images/S2orS1.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						nopoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					Math.random(); 
-						if (Math.random < 0.5) {
-							nopoints(); 
-						}
-						else { 
-							tenpoints(); 
-						}
-					setTimeout(fixstim, 500); 
-				}
-			} 
-			else if (current_img=="static/images/S2orS3.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						fivepoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					Math.random(); 
-						if (Math.random < 0.5) { 
-							nopoints(); 
-						}
-						else { 
-							tenpoints(); 
-						} 
-					setTimeout(fixstim, 500); 
-				}
-			}
-			else if (current_img=="static/images/S3orS2.svg") { 
-				if (event.keyCode = 77) {
-						remove_word();
-						Math.random(); 
-							if (Math.random < 0.5)  { 
-								nopoints(); 
-							}
-							else { 
-								tenpoints(); 
-							}
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					fivepoints(); 
-					setTimeout(fixstim, 500);
-				}
-			}
-			else if (current_img=="static/images/S2orS4.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						tenpoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					Math.random(); 
-						if (Math.random < 0.5) { 
-							nopoints(); 
-						}
-						else { 
-							tenpoints(); 
-						} 
-					setTimeout(fixstim, 500);
-				}
-			}
-			else if (current_img=="static/images/S4orS2.svg") { 
-				if (event.keyCode = 77) {
-						remove_word();
-						Math.random() 
-							if (Math.random < 0.5) { 
-								nopoints(); 
-							}
-							else { 
-								tenpoints(); 
-							}
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					tenpoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else if (current_img=="static/images/S3orS4.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						tenpoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					fivepoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else if (current_img=="static/images/S4orS3.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						fivepoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					tenpoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else { 
-				remove_word(); 
-				fixstim(); 
-			}
-			
-		}
-	};
-
-
-
-	var remove_word = function() {
-		d3.select("#word").remove();
-	};
-
-	var fixation = function() { 
-		psiTurk.showPage('fixation.html');
-	};
-
-	var fixstim = function() { 
-		fixation(); 
-		setTimeout(next, 500);
-	};
-
-	var slow = function() { 
-		psiTurk.showPage('slow.html');
-	};
-
-	var nopoints = function() { 
-		psiTurk.showPage('nopoints.html')
-	}
-
-	var tenpoints = function() { 
-		psiTurk.showPage('tenpoints.html')
-	} 
-
-	var fivepoints = function() { 
-		psiTurk.showPage('fivepoints.html')
-
-	}
-
-
-	
-	// Load the stage.html snippet into the body of the page
-	psiTurk.showPage('stage.html');
-
-	// Register the response handler that is defined above to handle any
-	// key down events.
-	$("body").focus().keydown(response_handler); 
-
-	// Start the test
-
-	fixation(); 
-	
-	setTimeout(next, 500);
-
-	
-};
-
-var RiskExperiment3 = function() {
-
-		var images = [ 
-				"static/images/S1[].svg",
-				"static/images/[]S1.svg",
-				"static/images/S1[].svg",
-				"static/images/[]S1.svg",
-				"static/images/S1[].svg",
-				"static/images/[]S1.svg",
-				"static/images/S1[].svg",
-				"static/images/[]S1.svg",
-				"static/images/S1[].svg",
-				"static/images/[]S1.svg",
-				"static/images/S1[].svg",
-				"static/images/[]S1.svg",
-				"static/images/S2[].svg",
-				"static/images/[]S2.svg",
-				"static/images/S2[].svg",
-				"static/images/[]S2.svg",
-				"static/images/S2[].svg",
-				"static/images/[]S2.svg",
-				"static/images/S2[].svg",
-				"static/images/[]S2.svg",
-				"static/images/S2[].svg",
-				"static/images/[]S2.svg",
-				"static/images/S2[].svg",
-				"static/images/[]S2.svg",
-				"static/images/S2[].svg",
-				"static/images/[]S2.svg",
-				"static/images/S3[].svg",
-				"static/images/[]S3.svg",
-				"static/images/S3[].svg",
-				"static/images/[]S3.svg",
-				"static/images/S3[].svg",
-				"static/images/[]S3.svg",
-				"static/images/S3[].svg",
-				"static/images/[]S3.svg",
-				"static/images/S3[].svg",
-				"static/images/[]S3.svg",
-				"static/images/S3[].svg",
-				"static/images/[]S3.svg",
-				"static/images/S4[].svg",
-				"static/images/[]S4.svg", 
-				"static/images/S4[].svg",
-				"static/images/[]S4.svg", 
-				"static/images/S4[].svg",
-				"static/images/[]S4.svg", 
-				"static/images/S4[].svg",
-				"static/images/[]S4.svg", 
-				"static/images/S4[].svg",
-				"static/images/[]S4.svg", 
-				"static/images/S4[].svg",
-				"static/images/[]S4.svg", 
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS2.svg", 
-				"static/images/S2orS1.svg",
-				"static/images/S1orS3.svg", 
-				"static/images/S3orS1.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS3.svg", 
-				"static/images/S3orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S2orS4.svg",
-				"static/images/S4orS2.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S1orS3.svg",
-				"static/images/S3orS1.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg",
-				"static/images/S3orS4.svg",
-				"static/images/S4orS3.svg"
-				];
-
-				psiTurk.preloadImages(images);
-
-				images = _.shuffle(images);
-
-	var wordon, // time word is presented
-	    listening = false;
-
-	// Stimuli for a basic Stroop experiment
-	var stims = [
-			[ "[]S1"],
-			[ "S1[]"],
-			[ "[]S1"],
-			[ "S1[]"],
-			[ "[]S1"],
-			[ "S1[]"],
-			[ "[]S1"],
-			[ "S1[]"],
-			[ "[]S1"],
-			[ "S1[]"],
-			[ "[]S1"],
-			[ "S1[]"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S2 or S3"],
-			[ "S3 or S2"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S1 or S3"],
-			[ "S3 or S1"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S4 or S3"],
-			[ "S3 or S4"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S1 or S2"], 
-			[ "S2 or S1"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "S2 or S4"],
-			[ "S4 or S2"],
-			[ "[]S2"],
-			[ "S2[]"],
-			[ "[]S2"],
-			[ "S2[]"],
-			[ "[]S2"],
-			[ "S2[]"],
-			[ "[]S2"],
-			[ "S2[]"],
-			[ "[]S2"],
-			[ "S2[]"],
-			[ "[]S2"],
-			[ "S2[]"],
-			[ "[]S2"],
-			[ "S2[]"],
-			[ "[]S3"],
-			[ "S3[]"],
-			[ "[]S3"],
-			[ "S3[]"],
-			[ "[]S3"],
-			[ "S3[]"],
-			[ "[]S3"],
-			[ "S3[]"],
-			[ "[]S3"],
-			[ "S3[]"],
-			[ "[]S3"],
-			[ "S3[]"],
-			[ "[]S4"], 
-			[ "S4[]"],
-			[ "[]S4"], 
-			[ "S4[]"],
-			[ "[]S4"], 
-			[ "S4[]"],
-			[ "[]S4"], 
-			[ "S4[]"],
-			[ "[]S4"], 
-			[ "S4[]"],
-			[ "[]S4"], 
-			[ "S4[]"]
-		];
-
-	
-	
-	stims = _.shuffle(stims);
-	
-
-	var next = function() {
-		if (stims.length===0) {
-				psiTurk.showPage('RLExperimentEnd.html')
-		} 
-		else { 
-			psiTurk.showPage('stage.html');
-			stim = stims.shift();
-			current_img = images.shift();
-			$('#stim').html('<img src='+current_img+' height=600 width=800>');
-			wordon = new Date().getTime();
-			listening = true;
-			d3.select("#query").html('<p id="prompt"></p>');
-		}
-	};
-
-
-	
-	var response_handler = function(e) {
-		if (!listening) return;
-
-		var keyCode = e.keyCode,
-			response;
-
-		switch (keyCode) {
-			case 77:
-				// "M"
-				response="The bandit on the right";
-				break;
-			case 66:
-				// "N"
-				response="The bandit on the left";
-				break;
-			default:
-				response = "";
-				break;
-		}
-		if (response.length>0) {
-			listening = false;
-			var rt = new Date().getTime() - wordon;
-
-			psiTurk.recordTrialData({'phase':"TEST",
-                                     'bandit':event.keyCode,
-                                     'image':images[0], /* may have problem here - I don't know if the stims and images will align */ 
-                                     'response':response,
-                                     'rt':rt}
-                                   );
-			if (rt > 1500) { 
-				remove_word(); 
-				slow(); 
-				setTimeout(fixstim, 500);	
-			}
-			else if (current_img=="static/images/S1[].svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						nopoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					nopoints(); 
-					setTimeout(fixstim, 500); 
-				}
-			}
-			else if (current_img=="static/images/[]S1.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						nopoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					nopoints(); 
-					setTimeout(fixstim, 500); 
-				}
-			}
-			else if (current_img=="static/images/[]S2.svg") { 
-				if (event.keyCode = 77) {
-						remove_word();
-						Math.random(); 
-							if (Math.random < 0.5) { 
-								nopoints();
-							} 
-							else { 
-								tenpoints(); 
-							} 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					nopoints(); 
-					setTimeout(fixstim, 500); 
-				}
-			}  
-			else if (current_img=="static/images/S2[].svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						nopoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					Math.random(); 
-						if (Math.random < .5) { 
-							nopoints(); 
-						}
-						else { 
-							tenpoints(); 
-						} 
-					setTimeout(fixstim, 500); 
-				}
-			}
-			else if (current_img=="static/images/[]S3.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						fivepoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					nopoints(); 
-					setTimeout(fixstim, 500); 
-				}
-			}
-			else if (current_img=="static/images/S3[].svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						nopoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					fivepoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else if (current_img=="static/images/[]S4.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						tenpoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					nopoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else if (current_img=="static/images/S4[].svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						nopoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					tenpoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else if (current_img=="static/images/S1orS3.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						fivepoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					nopoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else if (current_img=="static/images/S3orS1.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						nopoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					fivepoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else if (current_img=="static/images/S1orS2.svg") { 
-				if (event.keyCode = 77) {
-						remove_word();
-						Math.random(); 
-							if (Math.random < 0.5) { 
-								nopoints();
-							} 
-							else { 
-								tenpoints(); 
-							} 
-						setTimeout(fixstim, 500);
-				}
-				else {
-					remove_word(); 
-					nopoints(); 
-					setTimeout(fixstim, 500); 
-				}
-			}
-			else if (current_img=="static/images/S2orS1.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						nopoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					Math.random(); 
-						if (Math.random < 0.5) {
-							nopoints(); 
-						}
-						else { 
-							tenpoints(); 
-						}
-					setTimeout(fixstim, 500); 
-				}
-			} 
-			else if (current_img=="static/images/S2orS3.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						fivepoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					Math.random(); 
-						if (Math.random < 0.5) { 
-							nopoints(); 
-						}
-						else { 
-							tenpoints(); 
-						} 
-					setTimeout(fixstim, 500); 
-				}
-			}
-			else if (current_img=="static/images/S3orS2.svg") { 
-				if (event.keyCode = 77) {
-						remove_word();
-						Math.random(); 
-							if (Math.random < 0.5)  { 
-								nopoints(); 
-							}
-							else { 
-								tenpoints(); 
-							}
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					fivepoints(); 
-					setTimeout(fixstim, 500);
-				}
-			}
-			else if (current_img=="static/images/S2orS4.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						tenpoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					Math.random(); 
-						if (Math.random < 0.5) { 
-							nopoints(); 
-						}
-						else { 
-							tenpoints(); 
-						} 
-					setTimeout(fixstim, 500);
-				}
-			}
-			else if (current_img=="static/images/S4orS2.svg") { 
-				if (event.keyCode = 77) {
-						remove_word();
-						Math.random() 
-							if (Math.random < 0.5) { 
-								nopoints(); 
-							}
-							else { 
-								tenpoints(); 
-							}
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					tenpoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else if (current_img=="static/images/S3orS4.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						tenpoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					fivepoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else if (current_img=="static/images/S4orS3.svg") { 
-				if (event.keyCode = 77) {
-						remove_word(); 
-						fivepoints(); 
-						setTimeout(fixstim, 500); 
-				}
-				else {
-					remove_word(); 
-					tenpoints(); 
-					setTimeout(fixstim, 500) 
-				}
-			}
-			else { 
-				remove_word(); 
-				fixstim(); 
-			}
-			
-		}
-	};
-
-
-
-	var remove_word = function() {
-		d3.select("#word").remove();
-	};
-
-	var fixation = function() { 
-		psiTurk.showPage('fixation.html');
-	};
-
-	var fixstim = function() { 
-		fixation(); 
-		setTimeout(next, 500);
-	};
-
-	var slow = function() { 
-		psiTurk.showPage('slow.html');
-	};
-
-	var nopoints = function() { 
-		psiTurk.showPage('nopoints.html')
-	}
-
-	var tenpoints = function() { 
-		psiTurk.showPage('tenpoints.html')
-	} 
-
-	var fivepoints = function() { 
-		psiTurk.showPage('fivepoints.html')
-
-	}
-
-
-	
-	// Load the stage.html snippet into the body of the page
-	psiTurk.showPage('stage.html');
-
-	// Register the response handler that is defined above to handle any
-	// key down events.
-	$("body").focus().keydown(response_handler); 
-
-	// Start the test
-
-	fixation(); 
-	
-	setTimeout(next, 500);
-
-	
-};
+/********************
+* Holt and Laury    *
+********************/ 
 
 var HLInstructions2 = function() { 
 	psiTurk.showPage('HLInstructions2.html');
@@ -2207,7 +487,6 @@ var HLRiskExperiment = function() {
 			["9/10 of $2.00 or 1/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 9/10 of $3.85 or 1/10 of $0.10", "9/10 of $2.00 or 1/10 of $1.60", "9/10 of $3.85 or 1/10 of $0.10"], 
 			["10/10 of $2.00 or 0/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 10/10 of $3.85 or 0/10 of $0.10", "10/10 of $2.00 or 0/10 of $1.60", "10/10 of $3.85 or 1/10 of $0.10"], 
 		];
-		
 
 	//stims = _.shuffle(stims);
 
@@ -2293,6 +572,9 @@ var HLRiskExperiment = function() {
 };
 
 
+/********************
+* DOSPERT           *
+********************/
 
 var dInsturctions = function() { 
 	psiTurk.showPage('dInsturctions.html');
@@ -2470,9 +752,6 @@ var RTQuestionnaire = function() {
     
 	
 };
-
-
-
 
 // Task object to keep track of the current phase
 var currentview;
