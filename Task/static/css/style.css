@@ -66,11 +66,23 @@ strong {
   line-height: 1.1em;
 }
 
-#trial {
+#stim {
   margin: 0 auto;
   width: 800px;
   text-align: center;
+  margin-top: 200px;
 }
+
+#stim_left {
+  float: left;
+  width: 200px;
+}
+
+#stim_right {
+  float: right;
+  width: 200px;
+}
+
 
 #query {
   color: darkgray;
