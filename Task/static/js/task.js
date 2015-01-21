@@ -139,7 +139,7 @@ var RiskExperiment = function() {
 			"static/images/fixation.svg",
 			"static/images/tooslow.svg",
 			"static/images/wrongside.svg",
-			"static/images/blank.png"
+			"static/images/blank.svg"
 			];
 
 	// preload		
