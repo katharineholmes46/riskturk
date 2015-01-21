@@ -12635,3 +12635,25 @@ TemplateNotFound: undefined
 2015-01-21 14:21:21,962 /Users/angelar/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
 2015-01-21 14:21:21,996 /Users/angelar/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
 2015-01-21 14:21:22,055 /Users/angelar/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2015-01-21 16:26:58 -0500] [15652] [CRITICAL] WORKER TIMEOUT (pid:15656)
+[2015-01-21 16:26:58 -0500] [15652] [CRITICAL] WORKER TIMEOUT (pid:15657)
+[2015-01-21 16:26:58 -0500] [15652] [CRITICAL] WORKER TIMEOUT (pid:15661)
+[2015-01-21 16:26:58 -0500] [15652] [CRITICAL] WORKER TIMEOUT (pid:15663)
+[2015-01-21 16:26:58 -0500] [15652] [CRITICAL] WORKER TIMEOUT (pid:15664)
+[2015-01-21 16:26:58 -0500] [15652] [CRITICAL] WORKER TIMEOUT (pid:15665)
+[2015-01-21 16:26:58 -0500] [15652] [CRITICAL] WORKER TIMEOUT (pid:15666)
+[2015-01-21 16:26:58 -0500] [15652] [CRITICAL] WORKER TIMEOUT (pid:15667)
+[2015-01-21 16:26:58 -0500] [15652] [CRITICAL] WORKER TIMEOUT (pid:15668)
+[2015-01-21 16:26:58 -0500] [15652] [CRITICAL] WORKER TIMEOUT (pid:15671)
+[2015-01-21 16:26:58 -0500] [15652] [CRITICAL] WORKER TIMEOUT (pid:15673)
+2015-01-21 16:26:59,230 /Users/angelar/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2015-01-21 16:26:59,240 /Users/angelar/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2015-01-21 16:26:59,243 /Users/angelar/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2015-01-21 16:26:59,249 /Users/angelar/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2015-01-21 16:26:59,258 /Users/angelar/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2015-01-21 16:26:59,271 /Users/angelar/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2015-01-21 16:26:59,277 /Users/angelar/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2015-01-21 16:26:59,286 /Users/angelar/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2015-01-21 16:26:59,286 /Users/angelar/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2015-01-21 16:26:59,295 /Users/angelar/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2015-01-21 16:26:59,311 /Users/angelar/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js

@@ -15,8 +15,9 @@ strong {
 }
 
 .warm {
-  color: steelblue;
+  color: darkorange;
   text-align: justify;
+  font-size: 16px;
 }
 
 .cool {

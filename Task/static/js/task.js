@@ -10,10 +10,7 @@ var psiTurk = new PsiTurk(uniqueId, adServerLoc, mode);
 
 // All pages to be loaded
 var pages = [
-	"instructions/instruct-1.html",
-	"instructions/instruct-2.html",
-	"instructions/instruct-3.html",
-	"instructions/instruct-ready.html",
+	"instructions/welcome.html",
 	"stage.html",
 	"postquestionnaire.html",
 	"Block1End.html", 
@@ -41,10 +38,7 @@ var pages = [
 psiTurk.preloadPages(pages);
 
 var instructionPages = [ // add as a list as many pages as you like
-	"instructions/instruct-1.html",
-	"instructions/instruct-2.html",
-	"instructions/instruct-3.html",
-	"instructions/instruct-ready.html"
+	"instructions/welcome.html",
 ];
 
 /********************
@@ -755,6 +749,7 @@ var RTQuestionnaire = function() {
 
 // Task object to keep track of the current phase
 var currentview;
+
 
 /*******************
  * Run Task
