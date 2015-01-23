@@ -1,5 +1,7 @@
 *Holt & Laury*
 * Clean up
+* Add instructions
+* Open full screen
 
 *RiskRL*
 * Fix wait() function that separates training from testing 
@@ -9,6 +11,8 @@
 
 *DOSPERT* 
 * Clean up
+* Add instructions
+* Open full screen
 * Separate pages for each scale so that subjects don't have to scroll down too much
 * Look for function that blocks until questions are filled 
 * Photos stretched 
