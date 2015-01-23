@@ -16,5 +16,6 @@
 *General*
 * Do we want separate HITs? 
 * If so, need to look into calling the same people back
+* Fix AWS credentials & set up payment 
  
 
