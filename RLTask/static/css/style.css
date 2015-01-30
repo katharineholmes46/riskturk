@@ -34,7 +34,6 @@ strong {
     right: 0px;
     padding: 100px;
     padding-top: 5%;
-    border: 18px solid #f3f3f3;
     background: white;
 }
 
@@ -45,12 +44,16 @@ strong {
   padding-top: 1%;
 }
 
+ #task {
+  margin-top: 150px;
+ }
+
 /* ad.html  - the ad that people view first */
 #adlogo {
-    float: right;
-    width: 140px;
-    padding: 2px;
-    border: 1px solid #ccc;
+  float: right;
+  width: 140px;
+  padding: 2px;
+  border: 1px solid #ccc;
 }
 
 /* consent.html - the consent form */
@@ -67,11 +70,13 @@ strong {
   line-height: 1.1em;
 }
 
+
+/* stimulus box */
 #stim {
-  margin: 0 auto;
+  margin: 0 auto; 
   width: 800px;
+  height: 200px;
   text-align: center;
-  margin-top: 200px;
 }
 
 #stim_left {
@@ -84,8 +89,22 @@ strong {
   width: 200px;
 }
 
-#query {
-  color: darkgray;
+
+/* feedback box */
+#feedback {
+  margin: 0 auto;
+  width: 800px;
+  height: 100px;
+}
+
+#feedback_left {
+  float: left;
+  width: 200px;
+}
+
+#feedback_right {
+  float: right;
+  width: 200px;
 }
 
 .question {
