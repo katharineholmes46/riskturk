@@ -71,7 +71,6 @@ var RiskRL = function() {
 	time_out = 1500;
 
 
-
 	// *** define trialtypes *** 
 
 	// training
@@ -79,6 +78,7 @@ var RiskRL = function() {
 	var tt_train_choice = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5];
 	tt_train_choice = shuffle(tt_train_choice);
 	tt_train = tt_train_forced.concat(tt_train_choice);
+	tt_train = shuffle(tt_train);
 
 	// test
 	var tt_test_1 = repeatelem(1,20);
@@ -96,13 +96,11 @@ var RiskRL = function() {
 	// all 
 	trial_types = tt_train.concat(tt_test);
 
-
 	// trial variables 
 	trial = 0; // initializes the trial counter
 	nTrialsTrain = tt_train.length; 
 	nTrialsTest = tt_test.length; 
 	nTrials = nTrialsTrain + nTrialsTest; 
-	// nTrials = 10; // for debugging
 
 
 	// *** load graphics *** 
@@ -149,17 +147,12 @@ var RiskRL = function() {
         if (trial+1 <= nTrials) {
 
         		trialtype = trial_types[trial];
-	        	if (trial-1 == nTrialsTrain) {
-	        		console.log('here');
-	        		trial += 1; // advance counter
-	        		wait(); // bug 
-	        	}
-
     			trial += 1; // advance counter
         		displayStims(trialtype);
 
         	}
         else {
+
         	finish();
         }
 
@@ -172,8 +165,6 @@ var RiskRL = function() {
 		// shuffle position
 		stimPos = [1,2];
 		stimPos = _.shuffle(stimPos);
-
-		console.log(trialtype); // for debugging
 
 		psiTurk.showPage('stage.html');
 		
@@ -247,19 +238,19 @@ var RiskRL = function() {
 	// *** response handler ***
 	var response_handler = function(e) {
 
-		console.log(trialtype); // for debugging 
-
 		if (!listening) return;
 
 		var keyCode = e.keyCode;
 		// 66 = "B", subject picked left 
 		// 77 = "M", subject picked right
 
+		if (keyCode == 66) {var side = "left";}
+	    else {var side = "right";}
+
 		switch(trialtype) 
 		{	
 				case 1:
-					if (stimPos[0] == 1)
-					{
+					if (stimPos[0] == 1) {
 						if (keyCode == 66) {response = "S1";}
 						else {response = "S2";}
 					}
@@ -363,7 +354,8 @@ var RiskRL = function() {
 			psiTurk.recordTrialData({'trial': trial-1,
 									 'trialtype': trialtype,
 									 'response':response,
-	                                 'rt':rt}
+	                                 'rt':rt,
+	                            	 'side': side}
 	                               );
 			
 			if (rt > time_out) // show slow screen
@@ -372,7 +364,7 @@ var RiskRL = function() {
 				setTimeout(fixstim, outcome_time);	
 			}
 			else // show feedback
-				show_feedback(response);
+				show_feedback(response, side);
 
 		}
 
@@ -380,67 +372,73 @@ var RiskRL = function() {
 
 
 	// *** show fixation ***
-
 	var fixstim = function() { 
 		var iti = getRandomArbitrary(iti_bounds[0],iti_bounds[1]);
+		$("#feedback_left").remove();
+		$("#feedback_right").remove();
 		$('#stim').html('<img src='+otherstims[0]+' height=200 width=200 align=center>');
 		setTimeout(setup_newTrial, iti); // wait iti 
 	};
 
-	var wait = function() { 
-
-			console.log('waiting...')
-			$('#stim').html('<img src='+otherstims[4]+' height=200 width=200 align=center>');
-			setTimeout(displayStims(trialtype), 2000); // wait 2s 
-		};
-
 	// *** show feedback ***
+	var show_feedback = function(response, side) {
 
-	var show_feedback = function(response) {
-
+		// which stimulus was chosen? 
 		switch (response)
 			{
 				case "S1":
-
-					$('#stim').html('<img src='+feedback[0]+' height=200 width=200 align=center>');
-					setTimeout(fixstim, outcome_time); 
+					
+					var fb = feedback[0];
 					break;
 
 				case "S2":
 
 					var hlp_rand = Math.random();
-					if (hlp_rand < 0.5)
-					{
-						
-						$('#stim').html('<img src='+feedback[0]+' height=200 width=200 align=center>');
-						setTimeout(fixstim, outcome_time); 
+					
+					if (hlp_rand < 0.5) {
+						var fb = feedback[0];
 					}
-					else
-					{
-						
-						setTimeout(fixstim, outcome_time); 
-						$('#stim').html('<img src='+feedback[2]+' height=200 width=200 align=center>');
+					else {
+						var fb = feedback[2];
 					}
+					
 					break;
 
 				case "S3":
 
-					$('#stim').html('<img src='+feedback[1]+' height=200 width=200 align=center>');
-					setTimeout(fixstim, outcome_time); 
+					var fb = feedback[1];
+ 
 					break;
 
 				case "S4":
 
-					$('#stim').html('<img src='+feedback[2]+' height=200 width=200 align=center>');
-					setTimeout(fixstim, outcome_time); 
+					var fb = feedback[2];
+
 					break;
 
 				case "wrongside":
-					$('#stim').html('<img src='+otherstims[2]+' height=200 width=200 align=center>');
-					setTimeout(fixstim, outcome_time); 
-					break;
 
+					var fb = otherstims[2];
+
+					$('#stim').html('<img src='+fb+' height=200 width=200 align=center>'); 
+					setTimeout(fixstim, outcome_time);
+					return;
+
+			}	 
+
+		// which side to show feedback on? 	
+		if (side == "left") 
+			{
+    			$("#feedback_left").attr("src",fb);
+    			$("#stim_right").remove();
+			}
+		else 
+			{
+				$("#feedback_right").attr("src",fb);
+				$("#stim_left").remove();
 			}	
+		
+		setTimeout(fixstim, outcome_time);
 
 	} // end show_feedback
 
