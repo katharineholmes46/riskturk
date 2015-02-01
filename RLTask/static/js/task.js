@@ -15,6 +15,7 @@ var currentview;
 var pages = [
 	"instructions/RL_1.html",
 	"instructions/RL_2.html",
+	"instructions/RL_3.html",
 	"stage.html",
 	"postquestionnaire.html",
 	"fixation.html",
@@ -32,7 +33,8 @@ psiTurk.preloadPages(pages);
 
 var instructions = [ 
 	"instructions/RL_1.html",
-	"instructions/RL_2.html"
+	"instructions/RL_2.html",
+	"instructions/RL_3.html"
 ];
 
 /********************
