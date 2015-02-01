@@ -107,13 +107,13 @@ strong {
   width: 200px;
 }
 
+.example {
+  border: 1px dotted #ccc;
+}
+
 .question {
   margin-bottom: 30px;
 }
 
-/* errors */
-#error img {
-  padding-right: 10px;
-  padding-top: 15px;
-}
+
 
