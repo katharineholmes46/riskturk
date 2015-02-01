@@ -6,7 +6,7 @@
 *RiskRL*
 * Figure out why task breaks after post questionnaire (continue button won't advance)
 * Why are "return", "delete" etc keys registered?? 
-* [maybe] Add "too slow" functionality -- this currently only happens if there is a response  
+* Quit task if people miss too many trials or take too long to respond 
 
 *DOSPERT* 
 * Clean up
