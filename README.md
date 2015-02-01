@@ -4,7 +4,7 @@
 * Open full screen
 
 *RiskRL*
-* Figure out why task breaks after post questionnaire
+* Figure out why task breaks after post questionnaire (continue button won't advance)
 * Why are "return", "delete" etc keys registered?? 
 * [maybe] Add "too slow" functionality -- this currently only happens if there is a response  
 
