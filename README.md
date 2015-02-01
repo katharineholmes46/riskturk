@@ -4,10 +4,9 @@
 * Open full screen
 
 *RiskRL*
-* Fix wait() function that separates training from testing 
 * Figure out why task breaks after post questionnaire
+* Why are "return", "delete" etc keys registered?? 
 * [maybe] Add "too slow" functionality -- this currently only happens if there is a response  
-* [maybe] Add a test that they understood instructions? See supplementary in Hauser 2014 for an example 
 
 *DOSPERT* 
 * Clean up
@@ -20,6 +19,6 @@
 *General*
 * Do we want separate HITs? 
 * If so, need to look into calling the same people back
-* Fix AWS credentials & set up payment 
+* Set up payment 
  
 
