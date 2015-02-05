@@ -68,9 +68,11 @@ var RiskRL = function() {
 
 	// *** define timing parameters (in miliseconds) ***
 
-	iti_bounds = [1000,2000];
-	outcome_time = 500;
-	time_out = 1500;
+	iti_bounds = [1000,2000]; // iti is uniform between these 
+	outcome_time = 500; 
+	time_out = 1500; 
+	miss_thresh = 10; // quit after this many missed trials 
+	rt_thresh = 4000; // quit if any of the rt's are this long
 
 
 	// *** define trialtypes *** 
@@ -102,8 +104,8 @@ var RiskRL = function() {
 	trial = 0; // initializes the trial counter
 	nTrialsTrain = tt_train.length; 
 	nTrialsTest = tt_test.length; 
-	nTrials = nTrialsTrain + nTrialsTest; 
-
+	// nTrials = nTrialsTrain + nTrialsTest; 
+	nTrials = 10; // for debugging 
 
 	// *** load graphics *** 
 
@@ -360,6 +362,19 @@ var RiskRL = function() {
 	                            	 'side': side}
 	                               );
 			
+			// quit HIT if participant has too many missed trials 
+			// or takes too long to respond 
+
+			// if (missed > miss_thresh)
+			// {
+
+			// }
+
+			// if (rt > rt_thresh)
+			// {
+
+			// }
+
 			if (rt > time_out) // show slow screen
 			{ 
 				$('#stim').html('<img src='+otherstims[1]+' height=200 width=200 align=center>');
