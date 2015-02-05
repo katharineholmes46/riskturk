@@ -347,6 +347,10 @@ var RiskRL = function() {
 	    			break;
 	    }
 
+	      if (keyCode != 66 && keyCode !=77) { 
+	    	response = ""
+	    };
+
 	    // does not handle the case in which participants don't respond at all
 		if (response.length>0) 
 		{	
