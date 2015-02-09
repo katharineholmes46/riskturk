@@ -5,7 +5,6 @@
 
 *RiskRL*
 * Figure out why task breaks after post questionnaire (continue button won't advance)
-* Quit task if people miss too many trials or take too long to respond 
 
 *DOSPERT* 
 * Clean up
