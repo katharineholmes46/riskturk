@@ -23,7 +23,8 @@ var pages = [
 	"nopoints.html", 
 	"tenpoints.html",
 	"fivepoints.html",
-	"complete.html"
+	"complete.html",
+	"earlyfinish.html"
 ];
 
 psiTurk.preloadPages(pages);
@@ -72,7 +73,7 @@ var RiskRL = function() {
 	outcome_time = 500; 
 	time_out = 1500; 
 	miss_thresh = 10; // quit after this many missed trials 
-	rt_thresh = 4000; // quit if any of the rt's are this long
+	close_out = 10000; // quit if any of the rt's are this long
 
 
 	// *** define trialtypes *** 
@@ -347,7 +348,7 @@ var RiskRL = function() {
 	    			break;
 	    }
 
-	      if (keyCode != 66 && keyCode !=77) { 
+	    if (keyCode != 66 && keyCode !=77) { 
 	    	response = ""
 	    };
 
@@ -379,11 +380,15 @@ var RiskRL = function() {
 
 			// }
 
-			if (rt > time_out) // show slow screen
+			if (rt < close_out && rt > time_out) // show slow screen
 			{ 
 				$('#stim').html('<img src='+otherstims[1]+' height=200 width=200 align=center>');
 				setTimeout(fixstim, outcome_time);	
-			}
+			}	
+			else if (rt > close_out)
+			{  
+				early_finish(); 
+			}				
 			else // show feedback
 				show_feedback(response, side);
 
@@ -470,6 +475,9 @@ var RiskRL = function() {
 	    currentview = new Questionnaire();
 	};
 
+	var early_finish = function() { 
+	    psiTurk.showPage('earlyfinish.html');
+	};
 
 // *** start task ***
 	
