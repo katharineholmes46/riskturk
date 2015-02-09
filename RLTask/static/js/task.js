@@ -366,19 +366,6 @@ var RiskRL = function() {
 	                                 'rt':rt,
 	                            	 'side': side}
 	                               );
-			
-			// quit HIT if participant has too many missed trials 
-			// or takes too long to respond 
-
-			// if (missed > miss_thresh)
-			// {
-
-			// }
-
-			// if (rt > rt_thresh)
-			// {
-
-			// }
 
 			if (rt < close_out && rt > time_out) // show slow screen
 			{ 
