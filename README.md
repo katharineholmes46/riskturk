@@ -17,6 +17,7 @@
 *General*
 * Do we want separate HITs? 
 * If so, need to look into calling the same people back
+* Data quality check after debugging 
 * Set up payment 
  
 
