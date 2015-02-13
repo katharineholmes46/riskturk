@@ -4,7 +4,7 @@
 * Open full screen
 
 *RiskRL*
-* Figure out why task breaks after post questionnaire (continue button won't advance)
+
 
 *DOSPERT* 
 * Clean up
@@ -15,8 +15,7 @@
 * Photos stretched 
 
 *General*
-* Do we want separate HITs? 
-* If so, need to look into calling the same people back
+* Merge tasks 
 * Data quality check after debugging 
 * Set up payment 
  

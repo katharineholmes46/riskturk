@@ -130,8 +130,7 @@ var RiskRL = function() {
 			"static/images/fixation.svg",
 			"static/images/tooslow.svg",
 			"static/images/wrongside.svg",
-			"static/images/blank.svg",
-			"static/images/pretest.svg"
+			"static/images/blank.svg"
 			];
 
 	// preload		
@@ -510,7 +509,7 @@ var Questionnaire = function() {
 		psiTurk.saveData({
 			success: function() {
 			    clearInterval(reprompt); 
-                psiTurk.computeBonus('compute_bonus', function(){finish()}); 
+                // psiTurk.computeBonus('compute_bonus', function(){finish()}); 
 			}, 
 			error: prompt_resubmit
 		});
@@ -524,9 +523,10 @@ var Questionnaire = function() {
 	    record_responses();
 	    psiTurk.saveData({
             success: function(){
-                psiTurk.computeBonus('compute_bonus', function() { 
-                	psiTurk.completeHIT(); // when finished saving compute bonus, the quit
-                }); 
+                // psiTurk.computeBonus('compute_bonus', function() { 
+                // 	psiTurk.completeHIT(); // when finished saving compute bonus, then quit
+                // }); 
+	    		psiTurk.completeHIT();
             }, 
             error: prompt_resubmit});
 	});
