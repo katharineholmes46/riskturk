@@ -18,7 +18,15 @@ var pages = [
 	"instructions/instruct-3.html",
 	"instructions/instruct-ready.html",
 	"stage.html",
-	"postquestionnaire.html"
+	"postquestionnaire.html",
+	"dInstructions.html",
+	"EBInstructions.html",
+	"EBQuestionnaire.html",
+	"RPQuestionnnaire.html",
+	"RPInstructions.html",
+	"RTInstructions.html",
+	"RTQuestionnaire.html",
+	'HLExperimentEnd.html'
 ];
 
 psiTurk.preloadPages(pages);
@@ -31,9 +39,6 @@ var instructionPages = [ // add as a list as many pages as you like
 ];
 
 
-
-
-
 /********************
 * HTML manipulation
 *
@@ -44,115 +49,12 @@ var instructionPages = [ // add as a list as many pages as you like
 *
 ********************/
 
+/********************
+* STROOP TEST       *
+********************/
+var DospertExperiment = function() {
 
-
-var RiskExperiment = function() {
-
-	var wordon, // time word is presented
-	    listening = false;
-
-	// Stimuli for a basic Stroop experiment
-	var stims = [
-			[ "S1" ],
-			[ "S2 or S3"],
-			[ "S3 or S4"],
-			[ "S1 or S3"],
-			[ "S3 or S4"],
-			[ "S1"],
-			[ "S2"],
-			[ "S3"],
-			[ "S4"] 
-		];
-
-	stims = _.shuffle(stims);
-
-
-	
-
-	var next = function() {
-		if (stims.length===0) {
-			finish();
-		}
-		else {
-			stim = stims.shift();
-			show_word( stim[0] );
-			wordon = new Date().getTime();
-			listening = true;
-			d3.select("#query").html('<p id="prompt">Type "N" for the bandit on the left and M for the bandit on the right.</p>');
-			}
-	};
-	
-	var response_handler = function(e) {
-		if (!listening) return;
-
-		var keyCode = e.keyCode,
-			response;
-
-		switch (keyCode) {
-			case 77:
-				// "M"
-				response="The bandit on the right";
-				break;
-			case 78:
-				// "N"
-				response="The bandit on the left";
-				break;
-			default:
-				response = "";
-				break;
-		}
-		if (response.length>0) {
-			listening = false;
-			var hit = response == stim[1];
-			var rt = new Date().getTime() - wordon;
-
-			psiTurk.recordTrialData({'phase':"TEST",
-                                     'word':stim[0],
-                                     'color':stim[1],
-                                     'relation':stim[2],
-                                     'response':response,
-                                     'hit':hit,
-                                     'rt':rt}
-                                   );
-			
-		}
-	};
-
-	var finish = function() {
-	    $("body").unbind("keydown", response_handler); // Unbind keys
-	    currentview = new Questionnaire();
-	};
-	
-	var show_word = function(text, color) {
-		d3.select("#stim")
-			.append("div")
-			.attr("id","word")
-			.style("color",color)
-			.style("text-align","center")
-			.style("font-size","150px")
-			.style("font-weight","400")
-			.style("margin","20px")
-			.text(text);
-
-	};
-
-	var remove_word = function() {
-		d3.select("#word").remove();
-	};
-
-	
-	// Load the stage.html snippet into the body of the page
-	psiTurk.showPage('stage.html');
-
-	// Register the response handler that is defined above to handle any
-	// key down events.
-	$("body").focus().keydown(response_handler); 
-
-	// Start the test
-	
-	finish(); 
-
-	
+	psiTurk.showPage('EBInstructions.html'); 
 };
 
 
@@ -160,13 +62,31 @@ var RiskExperiment = function() {
 * Questionnaire *
 ****************/
 
-var Questionnaire = function() {
+var dInstructions = function() { 
+	psiTurk.showPage('dInstructions.html');
+}; 
+
+var EBInstructions = function() { 
+	psiTurk.showPage('EBInstructions.html');
+};
+
+var RPInstructions = function() { 
+	psiTurk.showPage('RPInstructions.html');
+};
+
+var RTInstructions = function() { 
+	psiTurk.showPage('RTInstructions.html');
+};
+
+
+
+var EBQuestionnaire = function() {
 
 	var error_message = "<h1>Oops!</h1><p>Something went wrong submitting your HIT. This might happen if you lose your internet connection. Press the button to resubmit.</p><button id='resubmit'>Resubmit</button>";
 
 	record_responses = function() {
 
-		psiTurk.recordTrialData({'phase':'postquestionnaire', 'status':'submit'});
+		psiTurk.recordTrialData({'phase':'EBQuestionnaire', 'status':'submit'});
 
 		$('textarea').each( function(i, val) {
 			psiTurk.recordUnstructuredData(this.id, this.value);
@@ -196,8 +116,8 @@ var Questionnaire = function() {
 	};
 
 	// Load the questionnaire snippet 
-	psiTurk.showPage('postquestionnaire.html');
-	psiTurk.recordTrialData({'phase':'postquestionnaire', 'status':'begin'});
+	psiTurk.showPage('EBQuestionnaire.html');
+	psiTurk.recordTrialData({'phase':'EBQuestionnaire', 'status':'begin'});
 	
 	$("#next").click(function () {
 	    record_responses();
@@ -211,7 +131,119 @@ var Questionnaire = function() {
 	});
     
 	
-};
+}; // end RTQuestionnaire
+
+
+
+
+var RPQuestionnnaire = function() {
+
+	var error_message = "<h1>Oops!</h1><p>Something went wrong submitting your HIT. This might happen if you lose your internet connection. Press the button to resubmit.</p><button id='resubmit'>Resubmit</button>";
+
+	record_responses = function() {
+
+		psiTurk.recordTrialData({'phase':'RPQuestionnnaire', 'status':'submit'});
+
+		$('textarea').each( function(i, val) {
+			psiTurk.recordUnstructuredData(this.id, this.value);
+		});
+		$('select').each( function(i, val) {
+			psiTurk.recordUnstructuredData(this.id, this.value);		
+		});
+
+	};
+
+	prompt_resubmit = function() {
+		replaceBody(error_message);
+		$("#resubmit").click(resubmit);
+	};
+
+	resubmit = function() {
+		replaceBody("<h1>Trying to resubmit...</h1>");
+		reprompt = setTimeout(prompt_resubmit, 10000);
+		
+		psiTurk.saveData({
+			success: function() {
+			    clearInterval(reprompt); 
+                psiTurk.computeBonus('compute_bonus', function(){finish()}); 
+			}, 
+			error: prompt_resubmit
+		});
+	};
+
+	// Load the questionnaire snippet 
+	psiTurk.showPage('RPQuestionnnaire.html');
+	psiTurk.recordTrialData({'phase':'RPQuestionnnaire', 'status':'begin'});
+	
+	$("#next").click(function () {
+	    record_responses();
+	    psiTurk.saveData({
+            success: function(){
+                psiTurk.computeBonus('compute_bonus', function() { 
+                	psiTurk.completeHIT(); // when finished saving compute bonus, the quit
+                }); 
+            }, 
+            error: prompt_resubmit});
+	});
+    
+	
+}; // end RPQuestionnaire
+
+
+
+var RTQuestionnaire = function() {
+
+	var error_message = "<h1>Oops!</h1><p>Something went wrong submitting your HIT. This might happen if you lose your internet connection. Press the button to resubmit.</p><button id='resubmit'>Resubmit</button>";
+
+	record_responses = function() {
+
+		psiTurk.recordTrialData({'phase':'RTQuestionnaire', 'status':'submit'});
+
+		$('textarea').each( function(i, val) {
+			psiTurk.recordUnstructuredData(this.id, this.value);
+		});
+		$('select').each( function(i, val) {
+			psiTurk.recordUnstructuredData(this.id, this.value);		
+		});
+
+	};
+
+	prompt_resubmit = function() {
+		replaceBody(error_message);
+		$("#resubmit").click(resubmit);
+	};
+
+	resubmit = function() {
+		replaceBody("<h1>Trying to resubmit...</h1>");
+		reprompt = setTimeout(prompt_resubmit, 10000);
+		
+		psiTurk.saveData({
+			success: function() {
+			    clearInterval(reprompt); 
+                psiTurk.computeBonus('compute_bonus', function(){finish()}); 
+			}, 
+			error: prompt_resubmit
+		});
+	};
+
+	// Load the questionnaire snippet 
+	psiTurk.showPage('RTQuestionnaire.html');
+	psiTurk.recordTrialData({'phase':'RTQuestionnaire', 'status':'begin'});
+	
+	$("#next").click(function () {
+	    record_responses();
+	    psiTurk.saveData({
+            success: function(){
+                psiTurk.computeBonus('compute_bonus', function() { 
+                	psiTurk.completeHIT(); // when finished saving compute bonus, the quit
+                }); 
+            }, 
+            error: prompt_resubmit});
+	});
+    
+	
+}; // end RTQuestionnaire
+
 
 // Task object to keep track of the current phase
 var currentview;
@@ -222,6 +254,7 @@ var currentview;
 $(window).load( function(){
     psiTurk.doInstructions(
     	instructionPages, // a list of pages you want to display in sequence
-    	function() { currentview = new RiskExperiment(); } // what you want to do when you are done with instructions
+    	function() { currentview = new DospertExperiment(); } // what you want to do when you are done with instructions
     );
 });
+x
