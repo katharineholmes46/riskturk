@@ -584,6 +584,9 @@
 </div>
 
 
+
+
+
             <!-- end of a question -->
 
 
@@ -598,6 +601,16 @@
             </div>
             <div class="col-xs-7">
             </div>
+
+
+            <script type="text/javascript">
+            function checkEnableSubmit() {
+              if (value="\u00A0" SELECTED);
+                {document.getElementById("next").disabled = true;}
+              else // in case it was enabled and the user changed their mind
+                {document.getElementById("next").disabled = false;}
+            }
+            </script>
             <div class="col-xs-3">
                 <button type="button" id="next" value="next" class="btn btn-primary btn-lg continue"  onClick="RPInstructions();">
                     Continue <span class="glyphicon glyphicon-arrow-right"></span>
