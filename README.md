@@ -1,22 +1,16 @@
 *Holt & Laury*
-* Clean up
-* Add instructions
-* Open full screen
+* Breaks before "debug complete"? - K 
+* Clean up - A
 
 *RiskRL*
-
+* Compute bonus, add bonus screen - K
 
 *DOSPERT* 
-* Clean up
-* Add instructions
-* Open full screen
-* Separate pages for each scale so that subjects don't have to scroll down too much
-* Look for function that blocks until questions are filled 
-* Photos stretched 
+* Clean up - A
 
 *General*
-* Merge tasks 
-* Data quality check after debugging 
-* Set up payment 
+* Merge tasks - A
+* Data quality check after debugging - K
+* Set up payment - both, once everything else is done
  
 
