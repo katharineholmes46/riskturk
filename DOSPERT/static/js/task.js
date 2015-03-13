@@ -83,21 +83,97 @@ var EBQuestionnaire = function() {
 			["Moving to a city far away from your extended family"],
 			["Starting a new career in your mid-thirties"],
 			["Leaving your young children alone at home while running an errand"],
+			["Not returning a wallet you found that contains $200"], 
+			[""],
+			["Admitting that your tastes are different from those of a friend"],
+			["Going camping in the wilderness"],
+			["Betting a day's income at the horse races"],
+			["Investing 10% of your annual income in a moderate growth mutual fund"],
+			["Drinking heavily at a social function"],
+			["Taking some questionable deductions on your income tax return"],
+			["Disagreeing with an authority figure on a major issue"],
+			["Betting a day’s income at a high-stake poker game"],
+			["Having an affair with a married man/woman"],
+			["Passing off somebody else’s work as your own"],
+			["Going down a ski run that is beyond your ability"],
+			["Investing 5% of your annual income in a very speculative stock"],
+			["Going whitewater rafting at high water in the spring"],
+			["Betting a day’s income on the outcome of a sporting event"],
+			["Engaging in unprotected sex"],
+			["Revealing a friend’s secret to someone else"],
+			["Driving a car without wearing a seat belt"],
+			["Choosing a career that you truly enjoy over a more secure one"],
+			["Speaking your mind about an unpopular issue in a meeting at work"],
+			["Sunbathing without sunscreen"],
+			["Bungee jumping off a tall bridge"],
+			["Piloting a small plane"],
+			["Walking home alone at night in an unsafe area of town"],
+			["Moving to a city far away from your extended family"],
+			["Starting a new career in your mid-thirties"],
+			["Leaving your young children alone at home while running an errand"],
+			["Not returning a wallet you found that contains $200"],
+			[""],
+			["Admitting that your tastes are different from those of a friend"],
+			["Going camping in the wilderness"],
+			["Betting a day's income at the horse races"],
+			["Investing 10% of your annual income in a moderate growth mutual fund"],
+			["Drinking heavily at a social function"],
+			["Taking some questionable deductions on your income tax return"],
+			["Disagreeing with an authority figure on a major issue"],
+			["Betting a day’s income at a high-stake poker game"],
+			["Having an affair with a married man/woman"],
+			["Passing off somebody else’s work as your own"],
+			["Going down a ski run that is beyond your ability"],
+			["Investing 5% of your annual income in a very speculative stock"],
+			["Going whitewater rafting at high water in the spring"],
+			["Betting a day’s income on the outcome of a sporting event"],
+			["Engaging in unprotected sex"],
+			["Revealing a friend’s secret to someone else"],
+			["Driving a car without wearing a seat belt"],
+			["Choosing a career that you truly enjoy over a more secure one"],
+			["Speaking your mind about an unpopular issue in a meeting at work"],
+			["Sunbathing without sunscreen"],
+			["Bungee jumping off a tall bridge"],
+			["Piloting a small plane"],
+			["Walking home alone at night in an unsafe area of town"],
+			["Moving to a city far away from your extended family"],
+			["Starting a new career in your mid-thirties"],
+			["Leaving your young children alone at home while running an errand"],
 			["Not returning a wallet you found that contains $200"]
+			
 		];
 
-	stims = _.shuffle(stims);
+	
 
 	var next = function() {
+		
 		if (stims.length===0) {
-			RPInstructions();
+			finish();
 		}
 		else {
+			
 			stim = stims.shift();
+			if (0 < stims.length && stims.length < 27) { 
+				psiTurk.showPage('RTstage.html');
+			}
+			else if (stims.length===27) { 
+				psiTurk.showPage('RTInstructions.html');
+			}
+			else if (27 < stims.length && stims.length < 55) { 
+				psiTurk.showPage('RPstage.html');
+			}
+			else if (stims.length===55) { 
+				psiTurk.showPage('RPInstructions.html');
+			}
+			else { 
+				psiTurk.showPage('EBstage.html');
+			}
+			
 			show_word( stim[0]);
 			wordon = new Date().getTime();
 			listening = true;
-			d3.select("#query").html('');
+			d3.select("#query").html(''); 
+
 		}
 	};
 	
@@ -185,7 +261,16 @@ var EBQuestionnaire = function() {
 
 	
 	// Load the stage.html snippet into the body of the page
-	psiTurk.showPage('EBstage.html');
+	
+	for (x=0; x<63; x++) { 
+		if (x < 5) { 
+			psiTurk.showPage('EBstage.html');
+		}
+		else { 
+			psiTurk.showPage('RPstage.html');
+		}	
+	}; 
+
 
 	// Register the response handler that is defined above to handle any
 	// key down events.
@@ -195,292 +280,7 @@ var EBQuestionnaire = function() {
 	next();
 };
 
-var RPQuestionnaire = function() {
 
-	var wordon, // time word is presented
-	    listening = false;
-
-	// Stimuli for a basic Stroop experiment
-	var stims = [
-			["Admitting that your tastes are different from those of a friend"],
-			["Going camping in the wilderness"],
-			["Betting a day's income at the horse races"],
-			["Investing 10% of your annual income in a moderate growth mutual fund"],
-			["Drinking heavily at a social function"],
-			["Taking some questionable deductions on your income tax return"],
-			["Disagreeing with an authority figure on a major issue"],
-			["Betting a day’s income at a high-stake poker game"],
-			["Having an affair with a married man/woman"],
-			["Passing off somebody else’s work as your own"],
-			["Going down a ski run that is beyond your ability"],
-			["Investing 5% of your annual income in a very speculative stock"],
-			["Going whitewater rafting at high water in the spring"],
-			["Betting a day’s income on the outcome of a sporting event"],
-			["Engaging in unprotected sex"],
-			["Revealing a friend’s secret to someone else"],
-			["Driving a car without wearing a seat belt"],
-			["Choosing a career that you truly enjoy over a more secure one"],
-			["Speaking your mind about an unpopular issue in a meeting at work"],
-			["Sunbathing without sunscreen"],
-			["Bungee jumping off a tall bridge"],
-			["Piloting a small plane"],
-			["Walking home alone at night in an unsafe area of town"],
-			["Moving to a city far away from your extended family"],
-			["Starting a new career in your mid-thirties"],
-			["Leaving your young children alone at home while running an errand"],
-			["Not returning a wallet you found that contains $200"]
-		];
-
-	stims = _.shuffle(stims);
-
-	var next = function() {
-		if (stims.length===0) {
-			RTInstructions();
-		}
-		else {
-			stim = stims.shift();
-			show_word( stim[0]);
-			wordon = new Date().getTime();
-			listening = true;
-			d3.select("#query").html('');
-		}
-	};
-	
-	var response_handler = function(e) {
-		if (!listening) return;
-
-		var keyCode = e.keyCode,
-			response;
-
-		switch (keyCode) {
-			case 49:
-				// "R"
-				response="1";
-				break;
-			case 50:
-				// "G"
-				response="2";
-				break;
-			case 51:
-				// "B"
-				response="3";
-				break;
-			case 52:
-				// "R"
-				response="4";
-				break;
-			case 53:
-				// "G"
-				response="54";
-				break;
-			case 54:
-				// "B"
-				response="6";
-				break;
-			case 55:
-				// "B"
-				response="7";
-				break;
-			default:
-				response = "";
-				break;
-		}
-		if (response.length>0) {
-			listening = false;
-			var hit = response == stim[1];
-			var rt = new Date().getTime() - wordon;
-
-			psiTurk.recordTrialData({'phase':"TEST",
-                                     'word':stim[0],
-                                     'color':stim[1],
-                                     'relation':stim[2],
-                                     'response':response,
-                                     'hit':hit,
-                                     'rt':rt}
-                                   );
-			remove_word();
-			next();
-		}
-	};
-
-	var finish = function() {
-	    $("body").unbind("keydown", response_handler); // Unbind keys
-	    currentview = new Questionnaire();
-	};
-
-	var RTInstructions = function() { 
-		psiTurk.showPage('RTInstructions.html')
-	}
-	
-	var show_word = function(text, color) {
-		d3.select("#stim")
-			.append("div")
-			.attr("id","word")
-			.style("color",color)
-			.style("text-align","center")
-			.style("font-size","30px")
-			.style("font-weight","400")
-			.style("margin","20px")
-			.text(text);
-	};
-
-	var remove_word = function() {
-		d3.select("#word").remove();
-	};
-
-	
-	// Load the stage.html snippet into the body of the page
-	psiTurk.showPage('RPstage.html');
-
-	// Register the response handler that is defined above to handle any
-	// key down events.
-	$("body").focus().keydown(response_handler); 
-
-	// Start the test
-	next();
-};
-
-var RTQuestionnaire = function() {
-
-	var wordon, // time word is presented
-	    listening = false;
-
-	// Stimuli for a basic Stroop experiment
-	var stims = [
-			["Admitting that your tastes are different from those of a friend"],
-			["Going camping in the wilderness"],
-			["Betting a day's income at the horse races"],
-			["Investing 10% of your annual income in a moderate growth mutual fund"],
-			["Drinking heavily at a social function"],
-			["Taking some questionable deductions on your income tax return"],
-			["Disagreeing with an authority figure on a major issue"],
-			["Betting a day’s income at a high-stake poker game"],
-			["Having an affair with a married man/woman"],
-			["Passing off somebody else’s work as your own"],
-			["Going down a ski run that is beyond your ability"],
-			["Investing 5% of your annual income in a very speculative stock"],
-			["Going whitewater rafting at high water in the spring"],
-			["Betting a day’s income on the outcome of a sporting event"],
-			["Engaging in unprotected sex"],
-			["Revealing a friend’s secret to someone else"],
-			["Driving a car without wearing a seat belt"],
-			["Choosing a career that you truly enjoy over a more secure one"],
-			["Speaking your mind about an unpopular issue in a meeting at work"],
-			["Sunbathing without sunscreen"],
-			["Bungee jumping off a tall bridge"],
-			["Piloting a small plane"],
-			["Walking home alone at night in an unsafe area of town"],
-			["Moving to a city far away from your extended family"],
-			["Starting a new career in your mid-thirties"],
-			["Leaving your young children alone at home while running an errand"],
-			["Not returning a wallet you found that contains $200"]
-		];
-
-	stims = _.shuffle(stims);
-
-	var next = function() {
-		if (stims.length===0) {
-			finish();
-		}
-		else {
-			stim = stims.shift();
-			show_word( stim[0]);
-			wordon = new Date().getTime();
-			listening = true;
-			d3.select("#query").html('');
-		}
-	};
-	
-	var response_handler = function(e) {
-		if (!listening) return;
-
-		var keyCode = e.keyCode,
-			response;
-
-		switch (keyCode) {
-			case 49:
-				// "R"
-				response="1";
-				break;
-			case 50:
-				// "G"
-				response="2";
-				break;
-			case 51:
-				// "B"
-				response="3";
-				break;
-			case 52:
-				// "R"
-				response="4";
-				break;
-			case 53:
-				// "G"
-				response="54";
-				break;
-			case 54:
-				// "B"
-				response="6";
-				break;
-			case 55:
-				// "B"
-				response="7";
-				break;
-			default:
-				response = "";
-				break;
-		}
-		if (response.length>0) {
-			listening = false;
-			var hit = response == stim[1];
-			var rt = new Date().getTime() - wordon;
-
-			psiTurk.recordTrialData({'phase':"TEST",
-                                     'word':stim[0],
-                                     'color':stim[1],
-                                     'relation':stim[2],
-                                     'response':response,
-                                     'hit':hit,
-                                     'rt':rt}
-                                   );
-			remove_word();
-			next();
-		}
-	};
-
-	var finish = function() {
-	    $("body").unbind("keydown", response_handler); // Unbind keys
-	    currentview = new Questionnaire();
-	};
-
-	
-	var show_word = function(text, color) {
-		d3.select("#stim")
-			.append("div")
-			.attr("id","word")
-			.style("color",color)
-			.style("text-align","center")
-			.style("font-size","30px")
-			.style("font-weight","400")
-			.style("margin","20px")
-			.text(text);
-	};
-
-	var remove_word = function() {
-		d3.select("#word").remove();
-	};
-
-	
-	// Load the stage.html snippet into the body of the page
-	psiTurk.showPage('RTstage.html');
-
-	// Register the response handler that is defined above to handle any
-	// key down events.
-	$("body").focus().keydown(response_handler); 
-
-	// Start the test
-	next();
-};
 
 
 /****************
