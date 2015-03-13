@@ -74,6 +74,9 @@ var EBQuestionnaire = function() {
 			["Engaging in unprotected sex"],
 			["Revealing a friend’s secret to someone else"],
 			["Driving a car without wearing a seat belt"],
+			["Investing 10% of your annual income in a new business venture"],
+			["Taking a skydiving class"],
+			["Riding a motorcycle without a helmet"],
 			["Choosing a career that you truly enjoy over a more secure one"],
 			["Speaking your mind about an unpopular issue in a meeting at work"],
 			["Sunbathing without sunscreen"],
@@ -102,6 +105,9 @@ var EBQuestionnaire = function() {
 			["Engaging in unprotected sex"],
 			["Revealing a friend’s secret to someone else"],
 			["Driving a car without wearing a seat belt"],
+			["Investing 10% of your annual income in a new business venture"],
+			["Taking a skydiving class"],
+			["Riding a motorcycle without a helmet"],
 			["Choosing a career that you truly enjoy over a more secure one"],
 			["Speaking your mind about an unpopular issue in a meeting at work"],
 			["Sunbathing without sunscreen"],
@@ -130,6 +136,9 @@ var EBQuestionnaire = function() {
 			["Engaging in unprotected sex"],
 			["Revealing a friend’s secret to someone else"],
 			["Driving a car without wearing a seat belt"],
+			["Investing 10% of your annual income in a new business venture"],
+			["Taking a skydiving class"],
+			["Riding a motorcycle without a helmet"],
 			["Choosing a career that you truly enjoy over a more secure one"],
 			["Speaking your mind about an unpopular issue in a meeting at work"],
 			["Sunbathing without sunscreen"],
@@ -153,16 +162,16 @@ var EBQuestionnaire = function() {
 		else {
 			
 			stim = stims.shift();
-			if (0 < stims.length && stims.length < 27) { 
+			if (0 < stims.length && stims.length < 30) { 
 				psiTurk.showPage('RTstage.html');
 			}
-			else if (stims.length===27) { 
+			else if (stims.length===30) { 
 				psiTurk.showPage('RTInstructions.html');
 			}
-			else if (27 < stims.length && stims.length < 55) { 
+			else if (30 < stims.length && stims.length < 61) { 
 				psiTurk.showPage('RPstage.html');
 			}
-			else if (stims.length===55) { 
+			else if (stims.length===61) { 
 				psiTurk.showPage('RPInstructions.html');
 			}
 			else { 
