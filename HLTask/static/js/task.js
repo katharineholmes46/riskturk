@@ -1,4 +1,3 @@
-
 /*
  * Requires:
  *     psiturk.js
@@ -19,9 +18,7 @@ var pages = [
 	"instructions/instruct-3.html",
 	"instructions/instruct-ready.html",
 	"stage.html",
-	"postquestionnaire.html", 
-	"BlockEnd.html",
-	"ExperimentEnd"
+	"postquestionnaire.html"
 ];
 
 psiTurk.preloadPages(pages);
@@ -29,8 +26,10 @@ psiTurk.preloadPages(pages);
 var instructionPages = [ // add as a list as many pages as you like
 	"instructions/instruct-1.html",
 	"instructions/instruct-2.html",
+	"instructions/instruct-3.html",
 	"instructions/instruct-ready.html"
 ];
+
 
 /********************
 * HTML manipulation
@@ -43,17 +42,14 @@ var instructionPages = [ // add as a list as many pages as you like
 ********************/
 
 /********************
-* RISK EXPERIMENT   *
-********************/ 
+* STROOP TEST       *
+********************/
+var StroopExperiment = function() {
 
-var Block1 = function() { 
-
-var RiskDescription = function() {
-
-	var wordon, // time stimulus is presented
+	var wordon, // time word is presented
 	    listening = false;
 
-	// gambles 
+	// Stimuli for a basic Stroop experiment
 	var stims = [
 			["1/10 of $2.00 or 9/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 1/10 of $3.85 or 9/10 of $0.10", "1/10 of $2.00 or 9/10 of $1.60", "1/10 of $3.85 or 9/10 of $0.10"],
 			["2/10 of $2.00 or 8/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 2/10 of $3.85 or 8/10 of $0.10", "2/10 of $2.00 or 8/10 of $1.60", "2/10 of $3.85 or 8/10 of $0.10"],
@@ -66,18 +62,17 @@ var RiskDescription = function() {
 			["9/10 of $2.00 or 1/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 9/10 of $3.85 or 1/10 of $0.10", "9/10 of $2.00 or 1/10 of $1.60", "9/10 of $3.85 or 1/10 of $0.10"], 
 			["10/10 of $2.00 or 0/10 of $1.60 \u00A0 \u00A0 \u00A0 \u00A0 10/10 of $3.85 or 0/10 of $0.10", "10/10 of $2.00 or 0/10 of $1.60", "10/10 of $3.85 or 1/10 of $0.10"], 
 		];
-		
 
-	//stims = _.shuffle(stims);
+
+
 
 	var next = function() {
 		if (stims.length===0) {
-			psiTurk.showPage('BlockEnd.html');
-			window.setInterval("Block2", 2000)
+			finish();
 		}
 		else {
 			stim = stims.shift();
-			show_word( stim[0]);
+			show_word( stim[0], stim[1] );
 			wordon = new Date().getTime();
 			listening = true;
 			d3.select("#query").html('<p id="prompt">Type "B" for the gamble on the left, "M" for for the gamble on the right.</p>');
@@ -92,11 +87,11 @@ var RiskDescription = function() {
 
 		switch (keyCode) {
 			case 66:
-				// "B"
+				// "B
 				response="Gamble A";
 				break;
 			case 77:
-				// "M"
+				// "GM
 				response="Gamble B";
 				break;
 			default:
@@ -111,11 +106,18 @@ var RiskDescription = function() {
 			psiTurk.recordTrialData({'phase':"TEST",
                                      'Gamble A':stim[1],
                                      'Gamble B':stim[2],
+                                     'response':response,
+                                     'hit':hit,
                                      'rt':rt}
                                    );
 			remove_word();
 			next();
 		}
+	};
+
+	var finish = function() {
+	    $("body").unbind("keydown", response_handler); // Unbind keys
+	    currentview = new Questionnaire();
 	};
 	
 	var show_word = function(text, color) {
@@ -133,6 +135,7 @@ var RiskDescription = function() {
 	var remove_word = function() {
 		d3.select("#word").remove();
 	};
+
 	
 	// Load the stage.html snippet into the body of the page
 	psiTurk.showPage('stage.html');
@@ -146,6 +149,63 @@ var RiskDescription = function() {
 };
 
 
+/****************
+* Questionnaire *
+****************/
+
+var Questionnaire = function() {
+
+	var error_message = "<h1>Oops!</h1><p>Something went wrong submitting your HIT. This might happen if you lose your internet connection. Press the button to resubmit.</p><button id='resubmit'>Resubmit</button>";
+
+	record_responses = function() {
+
+		psiTurk.recordTrialData({'phase':'postquestionnaire', 'status':'submit'});
+
+		$('textarea').each( function(i, val) {
+			psiTurk.recordUnstructuredData(this.id, this.value);
+		});
+		$('select').each( function(i, val) {
+			psiTurk.recordUnstructuredData(this.id, this.value);		
+		});
+
+	};
+
+	prompt_resubmit = function() {
+		replaceBody(error_message);
+		$("#resubmit").click(resubmit);
+	};
+
+	resubmit = function() {
+		replaceBody("<h1>Trying to resubmit...</h1>");
+		reprompt = setTimeout(prompt_resubmit, 10000);
+		
+		psiTurk.saveData({
+			success: function() {
+			    clearInterval(reprompt); 
+                psiTurk.computeBonus('compute_bonus', function(){finish()}); 
+			}, 
+			error: prompt_resubmit
+		});
+	};
+
+	// Load the questionnaire snippet 
+	psiTurk.showPage('postquestionnaire.html');
+	psiTurk.recordTrialData({'phase':'postquestionnaire', 'status':'begin'});
+	
+	$("#next").click(function () {
+	    record_responses();
+	    psiTurk.saveData({
+            success: function(){
+                psiTurk.computeBonus('compute_bonus', function() { 
+                	psiTurk.completeHIT(); // when finished saving compute bonus, the quit
+                }); 
+            }, 
+            error: prompt_resubmit});
+	});
+    
+	
+};
+
 // Task object to keep track of the current phase
 var currentview;
 
@@ -155,13 +215,6 @@ var currentview;
 $(window).load( function(){
     psiTurk.doInstructions(
     	instructionPages, // a list of pages you want to display in sequence
-    	function() { currentview = new RiskDescription(); } // what you want to do when you are done with instructions
+    	function() { currentview = new StroopExperiment(); } // what you want to do when you are done with instructions
     );
 });
-
-}; 
-
-Block1();
-
-
-
