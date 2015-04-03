@@ -1,5 +1,6 @@
 *Holt & Laury*
 * Clean up - A
+* Compute bonus, add bonus screen - K
 
 *RiskRL*
 * Compute bonus, add bonus screen - K
