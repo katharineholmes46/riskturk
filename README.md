@@ -1,5 +1,4 @@
 *Holt & Laury*
-* Breaks before "debug complete"? - K 
 * Clean up - A
 
 *RiskRL*
