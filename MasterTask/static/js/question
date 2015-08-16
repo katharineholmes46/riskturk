@@ -1,0 +1,85 @@
+var TaskWrapper = function() { 
+
+	var currentview;
+
+	var pages = [
+		 
+		 // loads some pages
+
+	];
+
+	psiTurk.preloadPages(pages);
+
+	console.log(pages) // these print out correctly 
+
+	var instructions = [ 
+
+		// loads instructions
+
+	];
+
+	console.log(instructions) // these print out correctly
+
+	var ActualTask = function() {
+
+		console.log("ActualTask") // this is not reached
+
+		// task specific functions, only showing "next()"
+
+		var next = function() {
+
+			console.log("hi, I'm at next") // this is not reached	
+			
+			if (stims.length===0) {
+				finish();
+			}
+			else {
+				
+				stim = stims.shift();
+				if (0 < stims.length && stims.length < 30) { 
+					psiTurk.showPage('RTstage.html');
+				}
+				else if (stims.length===30) { 
+					psiTurk.showPage('RTInstructions.html');
+				}
+				else if (30 < stims.length && stims.length < 61) { 
+					psiTurk.showPage('RPstage.html');
+				}
+				else if (stims.length===61) { 
+					psiTurk.showPage('RPInstructions.html');
+				}
+				else { 
+					psiTurk.showPage('EBstage.html');
+				}
+				
+				show_word( stim[0]);
+				wordon = new Date().getTime();
+				listening = true;
+				d3.select("#query").html(''); 
+
+			}
+		};
+	
+		// load the stage.html snippet into the body of the page	
+		for (x=0; x<63; x++) { 
+			if (x < 5) { 
+				psiTurk.showPage('EBstage.html');
+			}
+			else { 
+				psiTurk.showPage('RPstage.html');
+			}	
+		}; 
+		setTimeout(console.log("starting DOSPERT task..."), 500)
+		next();
+
+	}; // end ActualTask
+
+	console.log("hi four") // this prints out
+
+	$(window).load( function(){
+	    psiTurk.doInstructions(
+	    	instructions, // a list of pages you want to display in sequence
+	    	function() { currentview = new ActualTask(); } // what you want to do when you are done with instructions
+	    ); });
+
+}; //end TaskWrapper
