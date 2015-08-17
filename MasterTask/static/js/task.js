@@ -399,14 +399,14 @@ var RLWrapper = function() {
 				var rt = new Date().getTime() - stimOn;
 				
 				// record data
-				psiTurk.recordTrialData({'trial': trial,
+				psiTurk.recordTrialData({'phase': "RL",
+									     'trial': trial,
 										 'trialtype': trialtype,
 										 'response':response,
 		                                 'rt':rt,
 		                                 'feedback': feedback,
 		                                 'outcome': outcome,
-		                            	 'side': side,
-		                            	 'phase': "RL"}
+		                            	 'side': side}
 		                               );
 
 				if (rt < close_out && rt > time_out) // show slow screen
