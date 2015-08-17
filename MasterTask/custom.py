@@ -67,6 +67,36 @@ def list_my_data():
 # example computing bonus
 #----------------------------------------------
 
+# @custom_code.route('/compute_bonus', methods=['GET'])
+# def compute_bonus():
+#     # check that user provided the correct keys
+#     # errors will not be that gracefull here if being
+#     # accessed by the Javascrip client
+#     if not request.args.has_key('uniqueId'):
+#         raise ExperimentError('improper_inputs')  # i don't like returning HTML to JSON requests...  maybe should change this
+#     uniqueId = request.args['uniqueId']
+
+#     try:
+#         # lookup user in database
+#         user = Participant.query.\
+#                filter(Participant.uniqueid == uniqueId).\
+#                one()
+#         user_data = loads(user.datastring) # load datastring from JSON
+#         bonus = 0
+
+#         for record in user_data['data']: # for line in data file
+#             trial = record['trialdata']
+#             if trial['phase']=='TEST':
+#                 if trial['hit']==True:
+#                     bonus += 0.02
+#         user.bonus = bonus
+#         db_session.add(user)
+#         db_session.commit()
+#         resp = {"bonusComputed": "success"}
+#         return jsonify(**resp)
+#     except:
+#         abort(404)  # again, bad to display HTML, but...
+
 @custom_code.route('/compute_bonus', methods=['GET'])
 def compute_bonus():
     # check that user provided the correct keys
@@ -86,9 +116,13 @@ def compute_bonus():
 
         for record in user_data['data']: # for line in data file
             trial = record['trialdata']
-            if trial['phase']=='TEST':
-                if trial['hit']==True:
-                    bonus += 0.02
+            if trial['phase']=='RL':
+                if trial['outcome'] == 5:
+                    bonus += 0.05
+                if trial['outcome'] == 10:
+                    bonus += 0.10 
+            # if trial['phase']=='HL':
+            #     bonus += trial['extra_bonus']
         user.bonus = bonus
         db_session.add(user)
         db_session.commit()
