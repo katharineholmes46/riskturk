@@ -342,6 +342,55 @@ var RLWrapper = function() {
 		    	response = ""
 		    };
 
+		    // which stimulus was chosen? 
+			switch (response)
+				{
+					case "S1":
+						
+						var fb = feedback[0];
+						var outcome = 0;
+						break;
+
+					case "S2":
+
+						var hlp_rand = Math.random();
+						
+						if (hlp_rand < 0.5) {
+							var fb = feedback[0];
+							var outcome = 0;
+						}
+						else {
+							var fb = feedback[2];
+							var outcome = 10;
+						}
+						
+						break;
+
+					case "S3":
+
+						var fb = feedback[1];
+						var outcome = 5;
+	 
+						break;
+
+					case "S4":
+
+						var fb = feedback[2];
+						var outcome = 10;
+
+						break;
+
+					case "wrongside":
+
+						var fb = otherstims[2];
+						var outcome = "NaN";
+
+						$('#stim').html('<img src='+fb+' height=200 width=200 align=center>'); 
+						setTimeout(fixstim, outcome_time);
+						return;
+
+				}	 
+
 		    // does not handle the case in which participants don't respond at all
 			if (response.length>0) 
 			{	
@@ -350,11 +399,12 @@ var RLWrapper = function() {
 				var rt = new Date().getTime() - stimOn;
 				
 				// record data
-				psiTurk.recordTrialData({'trial': trial-1,
+				psiTurk.recordTrialData({'trial': trial,
 										 'trialtype': trialtype,
 										 'response':response,
 		                                 'rt':rt,
 		                                 'feedback': feedback,
+		                                 'outcome': outcome,
 		                            	 'side': side,
 		                            	 'phase': "RL"}
 		                               );
@@ -369,7 +419,7 @@ var RLWrapper = function() {
 					early_finish(); 
 				}				
 				else // show feedback
-					show_feedback(response, side);
+					show_feedback(fb, side);
 
 			}
 
@@ -386,50 +436,7 @@ var RLWrapper = function() {
 		};
 
 		// *** show feedback ***
-		var show_feedback = function(response, side) {
-
-			// which stimulus was chosen? 
-			switch (response)
-				{
-					case "S1":
-						
-						var fb = feedback[0];
-						break;
-
-					case "S2":
-
-						var hlp_rand = Math.random();
-						
-						if (hlp_rand < 0.5) {
-							var fb = feedback[0];
-						}
-						else {
-							var fb = feedback[2];
-						}
-						
-						break;
-
-					case "S3":
-
-						var fb = feedback[1];
-	 
-						break;
-
-					case "S4":
-
-						var fb = feedback[2];
-
-						break;
-
-					case "wrongside":
-
-						var fb = otherstims[2];
-
-						$('#stim').html('<img src='+fb+' height=200 width=200 align=center>'); 
-						setTimeout(fixstim, outcome_time);
-						return;
-
-				}	 
+		var show_feedback = function(fb, side) {
 
 			// which side to show feedback on? 	
 			if (side == "left") 
