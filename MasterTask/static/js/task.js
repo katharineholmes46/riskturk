@@ -893,6 +893,7 @@ var HLWrapper = function() {
 
 		var bonus_calculator = function() {
 				if (stims.length===0) {
+					
 					var multiplier = Math.floor(Math.random() * 10);
 					var gamble_choice = record_keypress[multiplier];
 					var gamble = stims2[multiplier];
@@ -954,7 +955,7 @@ var HLWrapper = function() {
 				psiTurk.saveData({
 					success: function() {
 					    clearInterval(reprompt); 
-		                // psiTurk.computeBonus('compute_bonus', function(){finish()}); 
+		                psiTurk.computeBonus('compute_bonus', function(){finish()}); 
 					}, 
 					error: prompt_resubmit
 				});
@@ -971,7 +972,6 @@ var HLWrapper = function() {
 		                psiTurk.computeBonus('compute_bonus', function() { 
 		                	psiTurk.completeHIT(); // when finished saving compute bonus, then quit
 		                }); 
-			    		// psiTurk.completeHIT();
 		            }, 
 		            error: prompt_resubmit});
 			});
