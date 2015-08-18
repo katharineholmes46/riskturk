@@ -523,95 +523,95 @@ var DOSPERTWrapper = function() {
 				["Admitting that your tastes are different from those of a friend"],
 				["Going camping in the wilderness"],
 				["Betting a day's income at the horse races"],
-				// ["Investing 10% of your annual income in a moderate growth mutual fund"],
-				// ["Drinking heavily at a social function"],
-				// ["Taking some questionable deductions on your income tax return"],
-				// ["Disagreeing with an authority figure on a major issue"],
-				// ["Betting a day’s income at a high-stake poker game"],
-				// ["Having an affair with a married man/woman"],
-				// ["Passing off somebody else’s work as your own"],
-				// ["Going down a ski run that is beyond your ability"],
-				// ["Investing 5% of your annual income in a very speculative stock"],
-				// ["Going whitewater rafting at high water in the spring"],
-				// ["Betting a day’s income on the outcome of a sporting event"],
-				// ["Engaging in unprotected sex"],
-				// ["Revealing a friend’s secret to someone else"],
-				// ["Driving a car without wearing a seat belt"],
-				// ["Investing 10% of your annual income in a new business venture"],
-				// ["Taking a skydiving class"],
-				// ["Riding a motorcycle without a helmet"],
-				// ["Choosing a career that you truly enjoy over a more secure one"],
-				// ["Speaking your mind about an unpopular issue in a meeting at work"],
-				// ["Sunbathing without sunscreen"],
-				// ["Bungee jumping off a tall bridge"],
-				// ["Piloting a small plane"],
-				// ["Walking home alone at night in an unsafe area of town"],
-				// ["Moving to a city far away from your extended family"],
-				// ["Starting a new career in your mid-thirties"],
-				// ["Leaving your young children alone at home while running an errand"],
-				// ["Not returning a wallet you found that contains $200"], 
-				// [""],
-				// ["Admitting that your tastes are different from those of a friend"],
-				// ["Going camping in the wilderness"],
-				// ["Betting a day's income at the horse races"],
-				// ["Investing 10% of your annual income in a moderate growth mutual fund"],
-				// ["Drinking heavily at a social function"],
-				// ["Taking some questionable deductions on your income tax return"],
-				// ["Disagreeing with an authority figure on a major issue"],
-				// ["Betting a day’s income at a high-stake poker game"],
-				// ["Having an affair with a married man/woman"],
-				// ["Passing off somebody else’s work as your own"],
-				// ["Going down a ski run that is beyond your ability"],
-				// ["Investing 5% of your annual income in a very speculative stock"],
-				// ["Going whitewater rafting at high water in the spring"],
-				// ["Betting a day’s income on the outcome of a sporting event"],
-				// ["Engaging in unprotected sex"],
-				// ["Revealing a friend’s secret to someone else"],
-				// ["Driving a car without wearing a seat belt"],
-				// ["Investing 10% of your annual income in a new business venture"],
-				// ["Taking a skydiving class"],
-				// ["Riding a motorcycle without a helmet"],
-				// ["Choosing a career that you truly enjoy over a more secure one"],
-				// ["Speaking your mind about an unpopular issue in a meeting at work"],
-				// ["Sunbathing without sunscreen"],
-				// ["Bungee jumping off a tall bridge"],
-				// ["Piloting a small plane"],
-				// ["Walking home alone at night in an unsafe area of town"],
-				// ["Moving to a city far away from your extended family"],
-				// ["Starting a new career in your mid-thirties"],
-				// ["Leaving your young children alone at home while running an errand"],
-				// ["Not returning a wallet you found that contains $200"],
-				// [""],
-				// ["Admitting that your tastes are different from those of a friend"],
-				// ["Going camping in the wilderness"],
-				// ["Betting a day's income at the horse races"],
-				// ["Investing 10% of your annual income in a moderate growth mutual fund"],
-				// ["Drinking heavily at a social function"],
-				// ["Taking some questionable deductions on your income tax return"],
-				// ["Disagreeing with an authority figure on a major issue"],
-				// ["Betting a day’s income at a high-stake poker game"],
-				// ["Having an affair with a married man/woman"],
-				// ["Passing off somebody else’s work as your own"],
-				// ["Going down a ski run that is beyond your ability"],
-				// ["Investing 5% of your annual income in a very speculative stock"],
-				// ["Going whitewater rafting at high water in the spring"],
-				// ["Betting a day’s income on the outcome of a sporting event"],
-				// ["Engaging in unprotected sex"],
-				// ["Revealing a friend’s secret to someone else"],
-				// ["Driving a car without wearing a seat belt"],
-				// ["Investing 10% of your annual income in a new business venture"],
-				// ["Taking a skydiving class"],
-				// ["Riding a motorcycle without a helmet"],
-				// ["Choosing a career that you truly enjoy over a more secure one"],
-				// ["Speaking your mind about an unpopular issue in a meeting at work"],
-				// ["Sunbathing without sunscreen"],
-				// ["Bungee jumping off a tall bridge"],
-				// ["Piloting a small plane"],
-				// ["Walking home alone at night in an unsafe area of town"],
-				// ["Moving to a city far away from your extended family"],
-				// ["Starting a new career in your mid-thirties"],
-				// ["Leaving your young children alone at home while running an errand"],
-				// ["Not returning a wallet you found that contains $200"]
+				["Investing 10% of your annual income in a moderate growth mutual fund"],
+				["Drinking heavily at a social function"],
+				["Taking some questionable deductions on your income tax return"],
+				["Disagreeing with an authority figure on a major issue"],
+				["Betting a day’s income at a high-stake poker game"],
+				["Having an affair with a married man/woman"],
+				["Passing off somebody else’s work as your own"],
+				["Going down a ski run that is beyond your ability"],
+				["Investing 5% of your annual income in a very speculative stock"],
+				["Going whitewater rafting at high water in the spring"],
+				["Betting a day’s income on the outcome of a sporting event"],
+				["Engaging in unprotected sex"],
+				["Revealing a friend’s secret to someone else"],
+				["Driving a car without wearing a seat belt"],
+				["Investing 10% of your annual income in a new business venture"],
+				["Taking a skydiving class"],
+				["Riding a motorcycle without a helmet"],
+				["Choosing a career that you truly enjoy over a more secure one"],
+				["Speaking your mind about an unpopular issue in a meeting at work"],
+				["Sunbathing without sunscreen"],
+				["Bungee jumping off a tall bridge"],
+				["Piloting a small plane"],
+				["Walking home alone at night in an unsafe area of town"],
+				["Moving to a city far away from your extended family"],
+				["Starting a new career in your mid-thirties"],
+				["Leaving your young children alone at home while running an errand"],
+				["Not returning a wallet you found that contains $200"], 
+				[""],
+				["Admitting that your tastes are different from those of a friend"],
+				["Going camping in the wilderness"],
+				["Betting a day's income at the horse races"],
+				["Investing 10% of your annual income in a moderate growth mutual fund"],
+				["Drinking heavily at a social function"],
+				["Taking some questionable deductions on your income tax return"],
+				["Disagreeing with an authority figure on a major issue"],
+				["Betting a day’s income at a high-stake poker game"],
+				["Having an affair with a married man/woman"],
+				["Passing off somebody else’s work as your own"],
+				["Going down a ski run that is beyond your ability"],
+				["Investing 5% of your annual income in a very speculative stock"],
+				["Going whitewater rafting at high water in the spring"],
+				["Betting a day’s income on the outcome of a sporting event"],
+				["Engaging in unprotected sex"],
+				["Revealing a friend’s secret to someone else"],
+				["Driving a car without wearing a seat belt"],
+				["Investing 10% of your annual income in a new business venture"],
+				["Taking a skydiving class"],
+				["Riding a motorcycle without a helmet"],
+				["Choosing a career that you truly enjoy over a more secure one"],
+				["Speaking your mind about an unpopular issue in a meeting at work"],
+				["Sunbathing without sunscreen"],
+				["Bungee jumping off a tall bridge"],
+				["Piloting a small plane"],
+				["Walking home alone at night in an unsafe area of town"],
+				["Moving to a city far away from your extended family"],
+				["Starting a new career in your mid-thirties"],
+				["Leaving your young children alone at home while running an errand"],
+				["Not returning a wallet you found that contains $200"],
+				[""],
+				["Admitting that your tastes are different from those of a friend"],
+				["Going camping in the wilderness"],
+				["Betting a day's income at the horse races"],
+				["Investing 10% of your annual income in a moderate growth mutual fund"],
+				["Drinking heavily at a social function"],
+				["Taking some questionable deductions on your income tax return"],
+				["Disagreeing with an authority figure on a major issue"],
+				["Betting a day’s income at a high-stake poker game"],
+				["Having an affair with a married man/woman"],
+				["Passing off somebody else’s work as your own"],
+				["Going down a ski run that is beyond your ability"],
+				["Investing 5% of your annual income in a very speculative stock"],
+				["Going whitewater rafting at high water in the spring"],
+				["Betting a day’s income on the outcome of a sporting event"],
+				["Engaging in unprotected sex"],
+				["Revealing a friend’s secret to someone else"],
+				["Driving a car without wearing a seat belt"],
+				["Investing 10% of your annual income in a new business venture"],
+				["Taking a skydiving class"],
+				["Riding a motorcycle without a helmet"],
+				["Choosing a career that you truly enjoy over a more secure one"],
+				["Speaking your mind about an unpopular issue in a meeting at work"],
+				["Sunbathing without sunscreen"],
+				["Bungee jumping off a tall bridge"],
+				["Piloting a small plane"],
+				["Walking home alone at night in an unsafe area of town"],
+				["Moving to a city far away from your extended family"],
+				["Starting a new career in your mid-thirties"],
+				["Leaving your young children alone at home while running an errand"],
+				["Not returning a wallet you found that contains $200"]
 				
 			];
 
@@ -897,41 +897,6 @@ var HLWrapper = function() {
 				  return false;   // Prevents the default action
 			}
 		};
-
-		var bonus_calculator = function() {
-				if (stims.length===0) {
-					
-					var multiplier = Math.floor(Math.random() * 10);
-					var gamble_choice = record_keypress[multiplier];
-					var gamble = stims2[multiplier];
-
-
-					prob = Math.random();
-					if (gamble_choice == 66) {
-						if (prob <= gamble[2]) { 
-							extra_bonus = gamble[0]
-						}
-						else { 
-							extra_bonus = gamble[1]
-						}
-					} 
-					else if (record_keypress == 77) { 
-						if (prob >= gamble[5]) { 
-							 extra_bonus = gamble[3]
-						}
-						else { 
-							extra_bonus = gamble[4]
-						}
-					}
-					else { 
-						 extra_bonus = 0 
-					}
-				}
-			else { 
-				extra_bonus = 0 
-			}
-			return
-			};
 
 		var Questionnaire = function() {
 
