@@ -1,6 +1,6 @@
 *General*
-* Add bonus screen - A
-* Data quality check after debugging - A
-* Set up payment - A
+* Data quality check
+* Set up payment 
+* Run first batch
  
 
