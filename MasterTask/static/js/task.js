@@ -383,11 +383,9 @@ var RLWrapper = function() {
 					case "wrongside":
 
 						var fb = otherstims[2];
-						var outcome = "NaN";
+						var outcome = "NA";
 
-						$('#stim').html('<img src='+fb+' height=200 width=200 align=center>'); 
-						setTimeout(fixstim, outcome_time);
-						return;
+						break;
 
 				}	 
 
