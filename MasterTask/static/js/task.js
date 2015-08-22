@@ -98,8 +98,8 @@ var RLWrapper = function() {
 		trial = 0; // initializes the trial counter
 		nTrialsTrain = tt_train.length; 
 		nTrialsTest = tt_test.length; 
-		nTrials = nTrialsTrain + nTrialsTest; 
-		// nTrials = 3; // for debugging 
+		// nTrials = nTrialsTrain + nTrialsTest; 
+		nTrials = 3; // for debugging 
 
 		// *** load graphics *** 
 
