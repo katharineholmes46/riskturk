@@ -1,5 +1,5 @@
 [HIT Configuration]
-title = Decision-making & risk 
+title = Decision-making & Risk 
 description = Decide between different gambles, choose between slot machines, and fill in one questionnaire.
 amt_keywords = decision-making, psychology
 lifetime = 24
