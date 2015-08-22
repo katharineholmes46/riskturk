@@ -676,7 +676,7 @@ var DOSPERTWrapper = function() {
 					response="4";
 					break;
 				case 53:
-					response="54";
+					response="5";
 					break;
 				case 54:
 					response="6";
